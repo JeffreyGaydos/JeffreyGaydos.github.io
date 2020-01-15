@@ -1,3 +1,10 @@
+/*Uses google fonts*/
 h1 {
-  color: #0000ff
+  color:brown;
+  font-family: 'Kanit', sans-serif;
+}
+
+p {
+  color: lightgray;
+  font-family: 'Hind Vadodara', sans-serif;
 }
