@@ -3,8 +3,25 @@ h1 {
   color:brown;
   font-family: 'Kanit', sans-serif;
 }
-
+/*For paragraphs*/
+h2 {
+  font-family: 'Kanit', sans-serif;
+  font-size: large;
+}
+/*For headers*/
+h3 {
+  color:brown;
+  font-family: 'Kanit', sans-serif;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+}
+/*For paragraphs on a dark background*/
 p {
   color: lightgray;
   font-family: 'Hind Vadodara', sans-serif;
+}
+
+div.inline {
+  float: left;
 }
