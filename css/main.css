@@ -22,6 +22,11 @@ h5 {
   font-family: 'Kanit', sans-serif;
   font-size: xx-large;
 }
+
+/*for image subtitles*/
+p.subtitle {
+  font-weight: bold; color: brown; text-align: center;
+}
 /*For paragraphs on a dark background*/
 p {
   color: lightgray;
