@@ -1,7 +1,7 @@
 <html>
     <style>
         body {
-            background-image: "minecraft/tellraw/Images/300px-Command_block_textures.png";
+            background-image: url("Images/300px-Command_block_textures.png");
             padding: 0px;
             margin: 0px;
         }
@@ -513,7 +513,8 @@
                         var linesSpanned = Math.trunc((relativeStart + stringLength) / maxChars) + 1;
                         //console.log("Lines Spanned: " + linesSpanned);
                         var finalLineRelativeEnd = masterPosition[m] % maxChars;
-                        var stringIndex = 0;                        
+                        var stringIndex = 0;          
+                        
                         //console.log("Line Relative End: " + (masterPosition[m] % maxChars));
                         for(var l = 0; l < linesSpanned; l++) {
                             if(l == 0) {
@@ -554,6 +555,9 @@
             }
             outputString += '</span>';
             document.getElementsByClassName("current-output")[0].innerHTML = outputString;
+
+            PostProcessFormatting();
+
             GarbageCollectArrays();
 
             HighlightClickEvents();
@@ -579,38 +583,120 @@
         //                         'https://i.imgur.com/vznI6zF.png',
         //                         'https://i.imgur.com/WzJwIna.png' ];
 
-        var obfuscatedChars = [ '' ];
-        var enchantedChars = [ '' ];
+        var obfuscatedChars = [ '' ]; //image paths need to be relative to the Image folder (the one adjacent to this html)
+        var enchantedChars = [ 'Images/Enchanted00.PNG' ];
 
         function HandleObfuscatedEnchanted(m, wrappedString) {                                             //TODO: Reduce to one character and add Colors, Bold, Italic, and Bold and Italic. Create a way to do strikethroughs on top of obfuscated
             var outputString = '';
             if(masterFormat[m][4]) {
-                //obfuscated or obfuscated and enchanted
-                outputString += '<img src="';
-                
-                for(var i = 0; i < wrappedString.length; i++) {
-                    var randIndex = Math.floor(Math.random() * obfuscatedChars.length);
-                    outputString += obfuscatedChars[randIndex];
-                    outputString += '" style="width:18px; height:24px;">';
-                    if(i != wrappedString.length - 1) {
-                        outputString += '<img src="';
-                    }
-                }
+                //obfuscated or obfuscated and enchanted (which is just obfuscated)
+                outputString += CreateObfuscatedFrame(wrappedString, m);
             } else if(masterFormat[m][5]) {                                                                 //TODO: Reduce to one character and add Colors Bold, Italic, and Bold and Italic. Create a way to do strikethrough on top of obfuscated
                 //enchanted
-                outputString += '<img src="';
-                for(var i = 0; i < wrappedString.length; i++) {
-                    var randIndex = Math.floor(Math.random() * enchantedChars.length);
-                    outputString += enchantedChars[randIndex];
-                    outputString += '" style="width:14px; height: 18px; padding: 0px 2px;">';
-                    if(i != wrappedString.length - 1) {
-                        outputString += '<img src="';
-                    }
-                }
+                outputString += CreateEnchantFrame(wrappedString, m); //opted to implement all forms via a canvas
+                //All special formatting (bold, italic, and strikethrough) will happen after rendering the characters
             } else {
                 outputString = wrappedString;
             }
             return outputString;
+        }
+
+        function CreateEnchantFrame(wrappedString, m) {
+            var outputString = '.<div style="width: 0px; display: inline-block; position: relative; left: -18px; top: 0px;"><canvas';
+            for(var i = 0; i < wrappedString.length; i++) {
+                outputString += ' width="18" height="18" style="width:18px; height: 18px; background-color: ' + masterColor[m] + ';">Your browser does not support the HTML5 canvas tag</canvas></div>';
+                if(i != wrappedString.length - 1) {
+                    outputString += '.<div style="width: 0px; display: inline-block; position: relative; left: -18px; top: 0px;"><canvas';
+                }
+            }
+            return outputString;
+        }
+
+        function CreateObfuscatedFrame(wrappedString, m) {
+            var outputString = '.<div style="width: 0px; display: inline-block; position: relative; left: -18px; top: 0px;"><canvas';
+            for(var i = 0; i < wrappedString.length; i++) {
+                outputString += ' width="18" height="18" style="background-color: ' + masterColor[m] + ';">Your browser does not support the HTML5 canvas tag</canvas></div>';
+                if(i != wrappedString.length - 1) {
+                    outputString += '.<div style="width: 0px; display: inline-block; position: relative; left: -18px; top: 0px;"><canvas';
+                }
+            }
+            return outputString;
+        }
+
+        function PostProcessFormatting() {
+            //handles strikethroughs, italics, and bolds
+            var enchantedSpans = document.getElementsByClassName("enchanted");
+            console.log("Found " + enchantedSpans.length + " spans");
+            for(var i = 0; i < enchantedSpans.length; i++) {
+                var eClasses = enchantedSpans[i].classList;
+                var allDivs = enchantedSpans[i].getElementsByTagName("div");
+                for(var j = 0; j < allDivs.length; j++) {
+                    var currentCanvas = allDivs[j].getElementsByTagName("canvas")[0];
+                    //var img = new Image();
+                    //img.src = "Images/Enchanted00.PNG";
+                    var img = document.getElementById("TESTIMAGE");
+
+                    var context = currentCanvas.getContext("2d");                    
+                    img.context = context; //to "pass" these things as "parameters" in the onload function
+                    img.eClasses = eClasses;
+                    context.drawImage(img, 0, 0, 18, 18);
+                    /*img.onload = function() {
+                        this.context.drawImage(this, 0, 0, 18, 18);
+                        if(this.eClasses.contains("bold")) {
+                            var imageData = this.context.getImageData(0, 0, currentCanvas.width, currentCanvas.height);
+                            for(var k = 0; k < imageData.data.length - 4; k += 4) {
+                                if(imageData.data[k + 7] <= 10) {
+                                    console.log("Found Invis: " + imageData.data[k + 3]);
+                                    imageData.data[k + 3] = 255;
+                                }
+                            }
+                            this.context.putImageData(imageData, 0, 0);
+                        }
+                    }*/
+                    if(eClasses.contains("italic")) {
+                        context.transform(1, 0, -0.25, 1, 2.5, 0);
+                        //drawing more to cover the corners after shearing
+                        context.drawImage(img, -18, 0, 18, 18);
+                        context.drawImage(img, 18, 0, 18, 18);
+                    }
+                    if(eClasses.contains("bold")) {
+                        var imageData = context.getImageData(0, 0, currentCanvas.width, currentCanvas.height);
+                        img.getImageData()
+                        for(var k = 0; k < imageData.data.length - 4; k += 4) {
+                            if(imageData.data[k + 7] <= 10) {
+                                //console.log("Found Invis: " + imageData.data[k + 2]);
+                                imageData.data[k + 3] = 255;
+                            }
+                        }
+                        context.putImageData(imageData, 0, 0);
+                    }
+
+                    //Underline works on its own
+
+                    if(eClasses.contains("strikethrough")) {
+
+                    }
+                }
+            }
+
+            //doing obfuscated formatting second allows it to override enchant in the case of both being active
+            var obfuscatedSpans = document.getElementsByClassName("enchanted");
+            for(var i = 0; i < obfuscatedSpans.length; i++) {
+                var oClasses = obfuscatedSpans[i].classList;
+                if(oClasses.contains("bold")) {
+
+                }
+                if(oClasses.contains("italic")) {
+
+                }
+
+                //Underline works on its own
+
+                if(oClasses.contains("strikethrough")) {
+
+                }
+            }
+
         }
 
         function UpdateInput(event) {
@@ -1661,6 +1747,9 @@
     <body onload="Initialize();" onresize="RecalculateOutput();">
         <div class="whiteout"></div>
         <div class="page-wrapper">
+            <!--Image storage for canvases (prevents security issues when getting ImageData on chrome and edge)-->
+            <img id="TESTIMAGE" src="Images/Enchanted00.PNG" style="position: absolute; left: -50px;">
+
             <h1 style="display: inline-block;">
                 Tellraw Generator
             </h1>
@@ -1949,7 +2038,7 @@
                         <td>
                             <div class="button option formatting obfuscated">
                                 <button onclick="AddFormat(event, 4);">
-                                    <img src="minecraft\tellraw\Images\OfficialObfusscatedTransparent.gif" alt="Obfuscated Formatting" title="Obfuscated Formatting" style="height: 23px; padding: 0px;">
+                                    <img src="Images\OfficialObfusscatedTransparent.gif" alt="Obfuscated Formatting" title="Obfuscated Formatting" style="height: 23px; padding: 0px;">
                                     <!--
                                         Each individual characer GIF: - Note that characters should be 18.02px across and 34px high
                                         1.  https://i.imgur.com/EvFpeRZ.gif
@@ -1970,7 +2059,7 @@
                         <td>
                             <div class="button option formatting">
                                 <button onclick="AddFormat(event, 5);"> <!--Note that the tellraw for this is "font":"minecraft:alt"-->
-                                    <img src="minecraft\tellraw\Images\Minecraft Alt Text.PNG" alt="Enchanted Formatting" title="Enchanted Formatting" style="height: 15px; padding: 4px;"></img>
+                                    <img src="Images\Minecraft Alt Text.PNG" alt="Enchanted Formatting" title="Enchanted Formatting" style="height: 15px; padding: 4px;"></img>
                                 </button>
                             </div>
                         </td>
@@ -2010,13 +2099,13 @@
             <table>
                 <tr>
                     <td style="padding: 0px 50px;">
-                        <img src="minecraft\tellraw\Images\250px-Dancing_Blue_Parrot.gif" style="width: 100px;">
+                        <img src="Images\250px-Dancing_Blue_Parrot.gif" style="width: 100px;">
                     </td>
                     <td>
                         <p style="padding-right: 20px;">Bug Reports? Suggestions? General Comments? #0000FF and Twined_Rope want to hear about it! Post on the forum where you found this tool or email me at Twined_Rope@gmail.com.</p>
                     </td>
                     <td style="padding: 0px 50px;">
-                        <img src="minecraft\tellraw\Images\Twined_Rope Head.png" style="width: 100px;">
+                        <img src="Images\Twined_Rope Head.png" style="width: 100px;">
                     </td>
                 </tr>
                 <tr>
