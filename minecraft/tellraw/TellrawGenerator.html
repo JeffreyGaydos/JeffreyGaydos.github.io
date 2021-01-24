@@ -623,15 +623,18 @@
             return outputString;
         }
 
-        function PostProcessFormatting() {
+        function PostProcessFormatting(m) {
             //handles strikethroughs, italics, and bolds
             var enchantedSpans = document.getElementsByClassName("enchanted");
             console.log("Found " + enchantedSpans.length + " spans");
             for(var i = 0; i < enchantedSpans.length; i++) {
+                console.log(i + "-th span...");
                 var eClasses = enchantedSpans[i].classList;
                 var allDivs = enchantedSpans[i].getElementsByTagName("div");
+                console.log("All Divs: " + allDivs.length);
                 for(var j = 0; j < allDivs.length; j++) {
                     var currentCanvas = allDivs[j].getElementsByTagName("canvas")[0];
+                    console.log("Found Canvas: " + currentCanvas);
                     //var img = new Image();
                     //img.src = "Images/Enchanted00.PNG";
                     var img = document.getElementById("TESTIMAGE");
@@ -639,42 +642,40 @@
                     var context = currentCanvas.getContext("2d");                    
                     img.context = context; //to "pass" these things as "parameters" in the onload function
                     img.eClasses = eClasses;
-                    context.drawImage(img, 0, 0, 18, 18);
-                    /*img.onload = function() {
-                        this.context.drawImage(this, 0, 0, 18, 18);
-                        if(this.eClasses.contains("bold")) {
-                            var imageData = this.context.getImageData(0, 0, currentCanvas.width, currentCanvas.height);
-                            for(var k = 0; k < imageData.data.length - 4; k += 4) {
-                                if(imageData.data[k + 7] <= 10) {
-                                    console.log("Found Invis: " + imageData.data[k + 3]);
-                                    imageData.data[k + 3] = 255;
-                                }
-                            }
-                            this.context.putImageData(imageData, 0, 0);
-                        }
-                    }*/
+
+                    //strict ordering: .transform only affects the next images
                     if(eClasses.contains("italic")) {
+                        console.log("Italicized...");
                         context.transform(1, 0, -0.25, 1, 2.5, 0);
                         //drawing more to cover the corners after shearing
                         context.drawImage(img, -18, 0, 18, 18);
                         context.drawImage(img, 18, 0, 18, 18);
                     }
+
+                    context.drawImage(img, 0, 0, 18, 18);
+                    
                     if(eClasses.contains("bold")) {
                         var imageData = context.getImageData(0, 0, currentCanvas.width, currentCanvas.height);
-                        img.getImageData()
                         for(var k = 0; k < imageData.data.length - 4; k += 4) {
-                            if(imageData.data[k + 7] <= 10) {
-                                //console.log("Found Invis: " + imageData.data[k + 2]);
-                                imageData.data[k + 3] = 255;
+                            if(imageData.data[k + 3] <= 10) {
+                                imageData.data[k - 1] = 0;
                             }
                         }
                         context.putImageData(imageData, 0, 0);
                     }
 
                     //Underline works on its own
-
                     if(eClasses.contains("strikethrough")) {
-
+                        var imageData = context.getImageData(0, 0, currentCanvas.width, currentCanvas.height);
+                        var midIndex = 480;
+                        var rowLength = 120;
+                        imageData.data[midIndex + 3] = 0;
+                        for(var k = midIndex; k < midIndex + (rowLength * 2); k += 4) {
+                            imageData.data[k + 3] = 0;
+                        }
+                        context.putImageData(imageData, 0, 0);
+                        //fails by modifying the data of allDivs, which is used in the end condition of the for
+                        //allDivs[k].innerHTML += '<div style="width:18px; height:3px; background-color:' + enchantedSpans[i].style.color + '; position: relative; top: 10px; left: 0px;"></div>';
                     }
                 }
             }
