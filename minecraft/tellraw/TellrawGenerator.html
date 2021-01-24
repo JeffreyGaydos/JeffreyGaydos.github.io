@@ -635,9 +635,8 @@
                 for(var j = 0; j < allDivs.length; j++) {
                     var currentCanvas = allDivs[j].getElementsByTagName("canvas")[0];
                     console.log("Found Canvas: " + currentCanvas);
-                    //var img = new Image();
-                    //img.src = "Images/Enchanted00.PNG";
-                    var img = document.getElementById("TESTIMAGE");
+                    var id = "enchanted0" + Math.floor(Math.random() * 7);
+                    var img = document.getElementById(id);
 
                     var context = currentCanvas.getContext("2d");                    
                     img.context = context; //to "pass" these things as "parameters" in the onload function
@@ -1749,7 +1748,21 @@
         <div class="whiteout"></div>
         <div class="page-wrapper">
             <!--Image storage for canvases (prevents security issues when getting ImageData on chrome and edge)-->
-            <img id="TESTIMAGE" src="Images/Enchanted00.PNG" style="position: absolute; left: -50px;">
+            <div style="position: absolute; left: -50px; display:;" id="image-holder">
+                <img id="enchanted00" src="Images/Enchanted00.PNG">
+                <br>
+                <img id="enchanted01" src="Images/Enchanted01.PNG">
+                <br>
+                <img id="enchanted02" src="Images/Enchanted02.PNG">
+                <br>
+                <img id="enchanted03" src="Images/Enchanted03.PNG">
+                <br>
+                <img id="enchanted04" src="Images/Enchanted04.PNG">
+                <br>
+                <img id="enchanted05" src="Images/Enchanted05.PNG">
+                <br>
+                <img id="enchanted06" src="Images/Enchanted06.PNG">
+            </div>
 
             <h1 style="display: inline-block;">
                 Tellraw Generator
