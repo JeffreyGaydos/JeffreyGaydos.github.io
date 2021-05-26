@@ -47,6 +47,7 @@ div.ss-description-box {
     width: 75%;
     font-size: 15pt;
     margin: 10px;
+    transition: all 0.75s ease;
 }
 
 h3.ss-description-text {

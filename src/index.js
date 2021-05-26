@@ -11,11 +11,13 @@ import Project2TankEncyclopedia from './pages/Project2TankEncyclopedia.jsx'
 /*Python Backend Imports End*/
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HTMLPort from './components/html_port';
+import WIPNotification from './components/wip_notification';
 
 ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
           <main>
+          <WIPNotification />
               {/*<nav>
                   <ul>
                       <li><Link to="/">Home</Link></li>

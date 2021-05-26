@@ -8,4 +8,5 @@ img.ss-image {
     animation-name: fade;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    transition: all 0.75s ease !important;
 }

@@ -4,6 +4,7 @@ import SSArrow from './ss_arrow.js';
 import * as FTE from 'ftellipsis'; //https://github.com/ftlabs/ftellipsis
 
 class SSDecsription extends Component {
+
     constructor(props) {
         super(props)
     }
@@ -33,13 +34,13 @@ class SSDecsription extends Component {
                     </div>
                 </div>
                 <div className="ss-arrow-left-pos">
-                    <SSArrow clickEvent={this.HandleClickBackwards}/>
+                    <SSArrow clickEvent={this.HandleClickBackwards.bind(this)}/>
                 </div>
                 <h2 className="ss-slide-num">
-                    1/{this.props.length}
+                    {this.props.slideNum + 1}/{this.props.length}
                 </h2>
                 <div className="ss-arrow-right-pos">
-                    <SSArrow clickEvent={this.HandleClickForwards}/>
+                    <SSArrow clickEvent={this.HandleClickForwards.bind(this)}/>
                 </div>
             </div>
         );
