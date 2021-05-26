@@ -1,0 +1,39 @@
+div.footer-button {
+    background-color: black;
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#fb-left {
+    left: 0px;
+    bottom: 15px;
+    text-align: left;
+    padding-left: 15px;
+    background-image: linear-gradient(to left, black, rgb(192, 0, 0), rgb(192, 0, 0));
+}
+
+#fb-right {
+    right: 0px;
+    bottom: 15px;
+    text-align: right;
+    padding-right: 15px;
+    background-image: linear-gradient(to right, black, rgb(192, 0, 0), rgb(192, 0, 0));
+}
+
+h2.footer-button {
+    color: white;
+    text-align: inherit;
+    font-family: 'Avenir';
+    font-size: 24pt;
+    position: relative;
+    top: 13px;
+    transition: all 0.2s ease;
+}
+
+div.footer-button:hover > h2.footer-button {
+    color: black;
+    cursor: pointer;
+}

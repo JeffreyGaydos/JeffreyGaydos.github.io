@@ -1,0 +1,35 @@
+div.ss-arrow {
+    height: 35px;
+    width: 35px;
+    border: 3px solid white;
+    transition: all 0.25s ease;
+    background-color: rgba(192, 0, 0, 0);
+    cursor: pointer;
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-delay: 1.25s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+div.ss-arrow:hover {
+    background-color: rgba(192, 0, 0, 1);
+}
+
+div.ss-arrow-shape {
+    height: 3px;
+    width: 50%;
+    background-color: white;
+}
+
+
+
+#ss-arrow-bottom {
+    margin: 18% 0% 0% 26%;
+    transform: rotate(-35deg);
+}
+
+#ss-arrow-top {
+    margin: 35% 0% 0% 26%;
+    transform: rotate(35deg);
+}

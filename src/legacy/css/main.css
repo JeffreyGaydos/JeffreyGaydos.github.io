@@ -1,0 +1,46 @@
+/*Uses google fonts*/
+h1 {
+  color:brown;
+  font-family: 'Kanit', sans-serif;
+}
+/*For paragraphs*/
+h2 {
+  font-family: 'Kanit', sans-serif;
+  font-size: large;
+}
+/*For headers*/
+h3 {
+  color:brown;
+  font-family: 'Kanit', sans-serif;
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+}
+/*for card titles*/
+h5 {
+  color: brown;
+  font-family: 'Kanit', sans-serif;
+  font-size: xx-large;
+}
+
+/*for image subtitles*/
+p.subtitle {
+  font-weight: bold; color: brown; text-align: center;
+}
+/*For paragraphs on a dark background*/
+p {
+  color: lightgray;
+  font-family: 'Hind Vadodara', sans-serif;
+}
+/*For inline cards. Named oddly since "card" is already a bootstrap class*/
+span.cardleft {
+  padding-right: 1.5%;
+}
+
+span.cardright {
+  padding-left: 1.5%;
+}
+
+span.cardmid {
+  padding-right: 1.5%; padding-left: 1.5%;
+}

@@ -1,0 +1,29 @@
+div.footer {
+    background-color: black;
+    width: 100%;
+    height: 75px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h3.footer {
+    display: inline-block;
+    font-family: 'Avenir';
+    position: relative;
+    font-size: 15pt;
+    margin-top: -15pt;
+    color: white;
+    top: 30pt;
+    left: calc(25%);
+    width: 50%;
+    text-align: center;
+}
+
+a.external {
+    text-decoration: underline;
+    color: rgb(192, 0, 0);
+}
+
+a.external:hover {
+    color:white;
+}

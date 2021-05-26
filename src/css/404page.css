@@ -1,0 +1,33 @@
+span._404 {
+    text-decoration: underline;
+    color: rgb(192, 0, 0);
+
+}
+
+div._404 {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-image: url('https://th.bing.com/th/id/R749f9406f763a8e01894c0f8818ac644?rik=App5l%2b766Z06OQ&riu=http%3a%2f%2fwww.zastavki.com%2fpictures%2foriginals%2f2015%2fBackgrounds_Monochrome_black_background_094934_.jpg&ehk=1rFg9%2bMMYVB9kHvLy9n03fe8qye%2bmmZx%2b%2fqYc2lHBck%3d&risl=&pid=ImgRaw');
+}
+
+span._404:hover {
+    cursor: pointer;
+    color: white;
+}
+
+h1._404 {
+    color: white;
+    font-family: "Avenir Bold";
+    font-size: 56pt;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h4._404 {
+    color: white;
+    font-family: 'Avenir';
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+}

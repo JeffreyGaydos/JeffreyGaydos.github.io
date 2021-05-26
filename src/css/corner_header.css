@@ -1,0 +1,48 @@
+div.corner-header {
+    background-image: linear-gradient(white, white, white, rgba(0, 0, 0, 0));
+}
+
+div.ch-words {
+    display: inline-block;
+    padding: 5px 5px 35px 15px;
+    font-family: 'Avenir';
+}
+
+div.ch-hamburger {
+    display: inline-block;
+    padding: 7px;
+    margin: 7px;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+div.ch-hamburger:hover div.ch-ham {
+    background-color: rgba(192, 0, 0, 1);
+}
+
+div.ch-ham {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.25s ease;
+}
+
+h1 {
+    margin: 0px;
+    text-align: center;
+    font-family: 'Avenir Bold';
+    color: rgb(192, 0, 0);    
+}
+
+h2 {
+    margin: 0px;    
+    text-align: right;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}

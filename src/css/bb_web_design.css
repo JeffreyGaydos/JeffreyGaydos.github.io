@@ -1,0 +1,67 @@
+div.bb-web-design {
+    display: inline-block;
+    width: 50%;
+    height: 400px;
+    background-color: white;
+    margin: 0px;
+    position: relative;
+    margin-top: -400px;
+    top: 171px;
+}
+
+h2.bb-web-design {
+    color: black;
+    font-size: 54pt;
+    font-family: 'Avenir';
+    margin-top: calc(200px - 29pt);
+    text-align: right;
+    transition: all 0.2s ease;
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+}
+
+h2.bb-web-design:hover{
+    color: rgb(192, 0, 0);
+    cursor: pointer;
+}
+
+h2.bb-web-design:hover ~ h3.bb-web-design-left{
+    color: rgb(192, 0, 0);
+    cursor: pointer;
+    margin-right: 400px;
+    margin-left: -500px;
+}
+
+h2.bb-web-design:hover ~ h3.bb-web-design-right{
+    color: rgb(192, 0, 0);
+    cursor: pointer;
+}
+
+h2.bb-web-design:hover ~ h3.bb-web-design-text{
+    color: rgb(192, 0, 0);
+    cursor: pointer;
+    margin-right: 80px;
+}
+
+h3.bb-web-design-left, h3.bb-web-design-right, h3.bb-web-design-text {
+    display: inline-block;
+    color: black;
+    font-family: 'Avenir';
+    position: absolute;
+    top: 0px;
+    right: 450px;
+    font-size: 54pt;
+    text-align: right;
+    transition: all 0.2s ease;
+    margin-top: calc(200px - 29pt);
+}
+
+h3.bb-web-design-left {
+    margin-right: 80px;
+}
+
+h3.bb-web-design-text {
+    color:rgba(255, 255, 255, 0);
+    white-space: nowrap;
+}

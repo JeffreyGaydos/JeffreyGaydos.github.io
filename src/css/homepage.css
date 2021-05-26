@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirNextLTPro-UltLt.otf');
+}
+
+@font-face {
+    font-family: 'Avenir Bold';
+    src: url('../fonts/AvenirNextLTPro-Regular.otf');
+}
+
+body {
+    background-image: none !important;
+    background-color: black;
+    margin: 0px;
+}
+
+div.hp-divider {
+    width: 100%;
+    height: 5px;
+    background-color: rgba(192, 0, 0, 1);
+}
+
+div.corner-header-pos {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,11 @@
+img.ss-image {
+    height: 750px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    margin: 0px;
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
