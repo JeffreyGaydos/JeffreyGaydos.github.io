@@ -29,7 +29,7 @@ ReactDOM.render(
               <Route path="/" exact component={HomePage} />
               <Route path="/resume-dev" component={Resume} />
               <Route path="/about-dev" component={About} />
-              <Route path="/legacy/:path" component={HTMLPort} />
+              <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
  <Route path="/Project1NWNToolset" component={Project1NWNToolset} />
 <Route path="/Project2TankEncyclopedia" component={Project2TankEncyclopedia} />
