@@ -3,4 +3,4 @@ A wepage to display various smaller projects that don't fit with a resume
 
 Currently re-working into a react website while maintaining the previous bootstrap version of the site
 
-see http://jeffreygaydos.github.io/react/legacy/index.html for the legacy site
+see https://jeffreygaydos.github.io/react/legacy/index.html for the legacy site
