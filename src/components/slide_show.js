@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 var currentSlideNum;
 var slideActive = false;
+var intervalBool = true;
 
 class SlideShow extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class SlideShow extends Component {
         this.setImage(0)
         var formattedName = backend['names'][0].substr(0, backend['names'][0].length - 5);
         var numPages = Object.keys(backend['names']).length;
+        var intID = setInterval(this.SlideInterval.bind(this), 10000);
         currentSlideNum = 0;
         this.state = {
             currentSlide: 0,
@@ -22,7 +24,8 @@ class SlideShow extends Component {
             content: backend[0].content,
             image: backend[0].image,
             name: formattedName,
-            length: numPages
+            length: numPages,
+            intervalID: intID,
         }
         setTimeout(this.RemoveInitialAnimation, 2000);
     }
@@ -35,7 +38,10 @@ class SlideShow extends Component {
         return (
             <div className="slide-show">
                 <SSDecsription title={this.state.title} date={this.state.date} content={this.state.content} link={this.state.name} length={this.state.length} clickEventForwards={this.SSForwards.bind(this)} clickEventBackwards={this.SSBackwards.bind(this)} slide={this.state.currentSlide} slideNum={this.state.currentSlide}/>
-                <SSImage image={this.state.image} link={this.props.name} slide={this.state.currentSlide}/>
+                <SSImage image={this.state.image} link={this.state.name}/>
+                <Link to={"/" + this.state.name}>
+                    <div className="ss-link-box"></div>
+                </Link>
             </div>
         );
     }
@@ -101,7 +107,20 @@ class SlideShow extends Component {
     }
 
     RemoveInitialAnimation() {
-        document.getElementsByClassName("ss-image")[0].style.animationName = 'nothing'; //messes up the starting animatino enough to effectively remove it
+        try {
+            document.getElementsByClassName("ss-image")[0].style.animationName = 'nothing'; //messes up the starting animatino enough to effectively remove it
+        } catch (allErrors) {
+            //if the user navigates away from the homepage too quickly, this function will run, finding undefined tags to set styles
+        }
+    }
+
+    SlideInterval() {
+        if(intervalBool) {
+            document.getElementsByClassName("ss-arrow")[1].click(); //state change & binding issues occur if the function is called directly
+            intervalBool = false;
+        } else {
+            intervalBool = true;
+        }
     }
 }
 

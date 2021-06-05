@@ -13,7 +13,7 @@ JSONDir = 'src\micro-backend\JSON'
 exludedPages = ['404page.jsx', 'homepage.jsx', 'resume.jsx', 'about.jsx']
 debug = False
 
-JSAtt = 'pythonBackend='
+JSAtt = 'python-backend='
 
 def main():
     print("Hello World")

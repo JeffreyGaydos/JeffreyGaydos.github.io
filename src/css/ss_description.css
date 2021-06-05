@@ -1,7 +1,7 @@
 div.ss-description {
     width: 35%;
     min-width: 500px;
-    height: 750px;
+    height: calc(100% - 130px);
     background-image: linear-gradient(to right, black, black, black, black, rgba(0, 0, 0, 0));
     position: relative;
     left: 0px;
@@ -12,7 +12,7 @@ div.ss-arrow-left-pos {
     display: inline-block;
     position: relative;
     left: 25px;
-    top: calc(100% - 65px);
+    top: calc(100% - 65px + 130px);
     transform: scale(-1);
 }
 
@@ -20,14 +20,14 @@ div.ss-arrow-right-pos {
     display: inline-block;
     position: relative;
     right: calc(25px - 60%);
-    top: calc(100% - 65px);
+    top: calc(100% - 65px + 130px);
 }
 
 h2.ss-slide-num {
     display: inline-block;
     color: white;
     position: relative;
-    top: calc(100% - 77px);
+    top: calc(100% - 77px + 130px);
     left: 30%;
     font-family: 'Avenir';
     animation-name: fade;
@@ -45,16 +45,27 @@ div.ss-description-box {
     top: 10px;
     left: 20px;
     width: 75%;
+    max-height: 100%;
+    height: calc(100% - 90px);
     font-size: 15pt;
     margin: 10px;
     transition: all 0.75s ease;
 }
 
 h3.ss-description-text {
-    margin: 0px;
+    height: auto;
     line-height: 30pt;
     opacity: 0;
+    margin: 0px;
     text-overflow: ellipsis;
+}
+
+div.text-blocker {
+    background-image: linear-gradient(to right, black, black, black, black, rgba(0, 0, 0, 0));
+    height: 130px;
+    width: 100%;
+    position: absolute;
+    bottom: -130px;
 }
 
 #ss-description-text-title {
@@ -73,6 +84,7 @@ h3.ss-description-text {
 }
 
 #ss-description-text-content {
+    max-height: inherit;
     animation-name: fade;
     animation-duration: 2s;
     animation-delay: 0.75s;
@@ -84,7 +96,8 @@ h3.ss-description-text {
 }
 
 .ellipsis-wrapper {
-    height: 450px;
+    height: inherit;
+    max-height: inherit;
     line-height: 10px;
 }
 
@@ -92,12 +105,14 @@ h3.ss-description-text {
     width: 50px;
     height: 15px;
     margin: -25px, -7.5px;
-    position: relative;
+    position: absolute;
     left: 41%;
-    top: 7px;
+    bottom: -110px;
+    z-index: 99;
 }
 
 .ce-dot {
+    transition: all 0.75s ease;
     background-color: white;
     opacity: 0;
     border-radius: 100%;

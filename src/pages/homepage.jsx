@@ -31,7 +31,7 @@ class HomePage extends Component {
             <div className="corner-header-pos">
                 <CornerHeader />
             </div>
-            <BigButtons />
+            {/*<BigButtons />*/}
             <Footer />
             </>
         );

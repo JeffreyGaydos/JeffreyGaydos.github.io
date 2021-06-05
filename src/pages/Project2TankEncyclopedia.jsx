@@ -14,10 +14,10 @@ class About extends Component {
     render() {
         return (
             <>
-            <h1 pythonBackend="title">Tank Encyclopedia - Volunteer Web Developer</h1>
-            <h2 pythonBackend="date">May, 2020 - Present</h2>
-            <h2 pythonBackend="content">Here is some Tank enecyclopedia content for this post. Wee look at all this DATA.</h2>
-            <img pythonBackend="image" src={require("../images/project1tanksicon.PNG")} />
+            <h1 python-backend="title">Tank Encyclopedia - Volunteer Web Developer</h1>
+            <h2 python-backend="date">May, 2020 - Present</h2>
+            <h2 python-backend="content">Here is some Tank enecyclopedia content for this post. Wee look at all this DATA.</h2>
+            <img python-backend="image" src={require("../images/project1tanksicon.PNG")} />
             </>
         );
     }
