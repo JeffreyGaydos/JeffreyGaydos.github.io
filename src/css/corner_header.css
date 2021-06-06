@@ -46,3 +46,15 @@ a {
     text-decoration: inherit;
     color: inherit;
 }
+
+div.corner-menu-pos-true {
+    position: relative;
+    top: -35px;
+    z-index: 0;
+}
+
+div.corner-menu-pos-false {
+    position: relative;
+    top: -35px;
+    z-index: -1;
+}

@@ -9,7 +9,7 @@ import _404Page from './pages/404page.jsx';
 import Project1NWNToolset from './pages/Project1NWNToolset.jsx'
 import Project2TankEncyclopedia from './pages/Project2TankEncyclopedia.jsx'
 /*Python Backend Imports End*/
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 import HTMLPort from './components/html_port';
 import WIPNotification from './components/wip_notification';
 
@@ -27,8 +27,8 @@ ReactDOM.render(
               </nav>*/}
             <Switch> {/* Ensures that only 1 page will be loaded at a time*/}
               <Route path="/" exact component={HomePage} />
-              <Route path="/resume-dev" component={Resume} />
-              <Route path="/about-dev" component={About} />
+              <Route path="/resume" component={Resume} />
+              <Route path="/about" component={About} />
               <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
  <Route path="/Project1NWNToolset" component={Project1NWNToolset} />

@@ -1,0 +1,48 @@
+div.corner-menu-true {
+    position: relative;
+    top: 0px;
+    transition: all 0.5s ease;
+}
+
+div.corner-menu-false {
+    position: relative;
+    top: -500px;
+    transition: all 0.5s ease;
+}
+
+div.cm-content {
+    padding-top: 50px;
+    width: inherit;
+    height: auto;
+    background-color: white;
+    z-index: 10 !important;
+    position: relative;
+    padding: 15px;
+}
+
+div.cm-bottom {
+    height: 50px;
+    width: inherit;
+    background-image: linear-gradient(white, rgba(0, 0, 0, 0));
+}
+
+h2.cm-text {
+    font-family: 'Avenir';
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+h2.cm-text:hover {
+    color: rgb(192, 0, 0);
+    cursor: pointer;
+}
+
+div.cm-divider {
+    background-color: black;
+    width: 75%;
+    height: 1px;
+    box-shadow: black 0px 1px 1px;
+    margin-left: 12.5%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

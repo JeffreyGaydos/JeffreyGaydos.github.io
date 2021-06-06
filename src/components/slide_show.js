@@ -5,18 +5,17 @@ import SSImage from './ss_image';
 import backend from '../micro-backend/JSON/backend.json';
 import { Link } from 'react-router-dom';
 
-var currentSlideNum;
+//var currentSlideNum;
 var slideActive = false;
 var intervalBool = true;
 
 class SlideShow extends Component {
     constructor(props) {
-        super(props)
-        this.setImage(0)
+        super(props);        
         var formattedName = backend['names'][0].substr(0, backend['names'][0].length - 5);
         var numPages = Object.keys(backend['names']).length;
         var intID = setInterval(this.SlideInterval.bind(this), 10000);
-        currentSlideNum = 0;
+        var currentSlideNum = 0;
         this.state = {
             currentSlide: 0,
             title: backend[0].title,
@@ -26,12 +25,9 @@ class SlideShow extends Component {
             name: formattedName,
             length: numPages,
             intervalID: intID,
+            intervalSlide: currentSlideNum
         }
         setTimeout(this.RemoveInitialAnimation, 2000);
-    }
-
-    setImage(i) {
-        console.log(backend.names[i]);        
     }
 
     render() {
@@ -64,8 +60,8 @@ class SlideShow extends Component {
     }
 
     SSForwardsStateUpdate() {
-        currentSlideNum = currentSlideNum < this.state.length - 1 ? currentSlideNum + 1 : 0;
-        var formattedName = backend['names'][currentSlideNum].substr(0, backend['names'][currentSlideNum].length - 5);
+        var currentSlideNum = this.state.currentSlide < this.state.length - 1 ? this.state.currentSlide + 1 : 0;
+        var formattedName = backend['names'][this.state.currentSlide].substr(0, backend['names'][this.state.currentSlide].length - 5);
         this.setState((prevState) => ({
             currentSlide: currentSlideNum,
             title: backend[currentSlideNum].title,
@@ -94,8 +90,8 @@ class SlideShow extends Component {
     }
 
     SSBackwardsStateUpdate() {
-        currentSlideNum = currentSlideNum > 0 ? currentSlideNum - 1 : this.state.length - 1;
-        var formattedName = backend['names'][currentSlideNum].substr(0, backend['names'][currentSlideNum].length - 5);
+        var currentSlideNum = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : this.state.length - 1;
+        var formattedName = backend['names'][this.state.currentSlide].substr(0, backend['names'][this.state.currentSlide].length - 5);
         this.setState((prevState) => ({
             currentSlide: currentSlideNum,
             title: backend[currentSlideNum].title,
@@ -115,13 +111,43 @@ class SlideShow extends Component {
     }
 
     SlideInterval() {
-        if(intervalBool) {
-            document.getElementsByClassName("ss-arrow")[1].click(); //state change & binding issues occur if the function is called directly
-            intervalBool = false;
+        //conditionals for stoping the automatic slideshow
+        if(window.location.pathname !== "/") {
+            clearInterval(this.state.intervalID);
         } else {
-            intervalBool = true;
+            if(intervalBool) { //conditionals for skiping the double click
+                intervalBool = false;
+            } else {
+                intervalBool = true;
+                //The following code must be in this false branch here to detect user input
+                if(this.state.currentSlide !== this.state.intervalSlide) {
+                    //pause slideshow for 1 interval
+                    this.SlideIntervalStateUpdateToCurrent.bind(this);
+                    this.SlideIntervalStateUpdateToCurrent();
+                } else {
+                    //continue slideshow as normal
+                    this.SlideIntervalStateUpdate.bind(this);
+                    this.SlideIntervalStateUpdate();
+                    document.getElementsByClassName("ss-arrow")[1].click(); //state change & binding issues occur if the function is called directly
+                }
+            }
         }
     }
+
+    SlideIntervalStateUpdate() {
+        var currentSlideNum = this.state.intervalSlide < this.state.length - 1 ? this.state.intervalSlide + 1 : 0;
+        this.setState((prevState) => ({
+            intervalSlide: currentSlideNum
+        }));
+    }
+
+    SlideIntervalStateUpdateToCurrent() {
+        this.setState((prevState) => ({
+            intervalSlide: this.state.currentSlide
+        }));
+    }
+
+    
 }
 
 export default SlideShow;
