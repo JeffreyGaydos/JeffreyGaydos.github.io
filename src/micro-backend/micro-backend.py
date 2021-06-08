@@ -10,7 +10,7 @@ routingPath = 'src\index.js'
 pageDirectory = 'src\pages'
 pageDirectoryF = './pages'
 JSONDir = 'src\micro-backend\JSON'
-exludedPages = ['404page.jsx', 'homepage.jsx', 'resume.jsx', 'about.jsx']
+exludedPages = ['404page.jsx', 'homepage.jsx', 'resume.jsx', 'about.jsx', 'webDevelopment.jsx', 'gameDevelopment.jsx']
 debug = False
 
 JSAtt = 'python-backend='

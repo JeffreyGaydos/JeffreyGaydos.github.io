@@ -1,0 +1,13 @@
+div.header {
+    width: calc(100% - 248.48px);
+    height: 107px;
+}
+
+h1.h-heading {
+    color: black;
+    font-family: 'Avenir';
+    font-size: 30pt;
+    padding: 10px;
+    margin-left: 248.48px;
+    text-align: center;
+}

@@ -108,7 +108,7 @@ div.text-blocker {
     position: absolute;
     left: 41%;
     bottom: -110px;
-    z-index: 10;
+    z-index: 2;
 }
 
 .ce-dot {

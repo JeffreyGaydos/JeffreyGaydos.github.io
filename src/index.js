@@ -4,12 +4,14 @@ import './css/index.css';
 import HomePage from './pages/homepage.jsx';
 import Resume from './pages/resume.jsx';
 import About from './pages/about.jsx';
+import WebDesign from './pages/webDevelopment.jsx'
+//import gameDesign from './pages/gameDesign.jsx'
 import _404Page from './pages/404page.jsx';
 /*Python Backend Imports Start*/
 import Project1NWNToolset from './pages/Project1NWNToolset.jsx'
 import Project2TankEncyclopedia from './pages/Project2TankEncyclopedia.jsx'
 /*Python Backend Imports End*/
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HTMLPort from './components/html_port';
 import WIPNotification from './components/wip_notification';
 
@@ -29,6 +31,8 @@ ReactDOM.render(
               <Route path="/" exact component={HomePage} />
               <Route path="/resume" component={Resume} />
               <Route path="/about" component={About} />
+              <Route path="/web-development" component={WebDesign} />
+              {/* <Route path="/game-design" component={GameDesign} /> */}
               <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
  <Route path="/Project1NWNToolset" component={Project1NWNToolset} />

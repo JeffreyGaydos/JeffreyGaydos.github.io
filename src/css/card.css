@@ -1,0 +1,34 @@
+div.card {
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    box-shadow: black 5px 5px 13px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+div.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+img.cd-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+div.cd-date-box {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(192, 0, 0);
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+h2.cd-date {
+    color: white;
+    font-family: 'Avenir';
+    font-size: 16pt;
+    text-align: left;
+}

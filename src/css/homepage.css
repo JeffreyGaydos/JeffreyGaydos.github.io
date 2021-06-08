@@ -19,10 +19,3 @@ div.hp-divider {
     height: 5px;
     background-color: rgba(192, 0, 0, 1);
 }
-
-div.corner-header-pos {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    padding: 0px;
-}

@@ -43,19 +43,23 @@ class SlideShow extends Component {
     }
 
     SSForwards() {
-        if(!slideActive) {
-            slideActive = true;
-            this.SSForwardsStateUpdate.bind(this);
-            document.getElementsByClassName("ss-description-box")[0].style.opacity = 0;
-            document.getElementsByClassName("ss-image")[0].style.setProperty("opacity", 0, "important");
-            setTimeout(() => {
-                this.SSForwardsStateUpdate();
-                document.getElementsByClassName("ss-description-box")[0].style.opacity = 1;
-                document.getElementsByClassName("ss-image")[0].style.setProperty("opacity", 1, "important");
-            }, 750);
-            setTimeout(() => {
-                slideActive = false;
-            }, 1000);
+        try {
+            if(!slideActive) {
+                slideActive = true;
+                this.SSForwardsStateUpdate.bind(this);
+                document.getElementsByClassName("ss-description-box")[0].style.opacity = 0;
+                document.getElementsByClassName("ss-image")[0].style.setProperty("opacity", 0, "important");
+                setTimeout(() => {
+                    this.SSForwardsStateUpdate();
+                    document.getElementsByClassName("ss-description-box")[0].style.opacity = 1;
+                    document.getElementsByClassName("ss-image")[0].style.setProperty("opacity", 1, "important");
+                }, 750);
+                setTimeout(() => {
+                    slideActive = false;
+                }, 1000);
+            }
+        } catch (e) {
+            //all errors should be the result of page naviagtion, just ignore
         }
     }
 
