@@ -6,11 +6,13 @@ titleArray = []
 dateArray = []
 contentArray = []
 
+categoryArray = {''}
+
 routingPath = 'src\index.js'
 pageDirectory = 'src\pages'
 pageDirectoryF = './pages'
 JSONDir = 'src\micro-backend\JSON'
-exludedPages = ['404page.jsx', 'homepage.jsx', 'resume.jsx', 'about.jsx', 'webDevelopment.jsx', 'gameDevelopment.jsx']
+exludedPages = ['404page.jsx', 'homepage.jsx', 'resume.jsx', 'about.jsx', 'webDevelopment.jsx', 'gameDevelopment.jsx', 'category_page.jsx', '#articleCopyPasta.jsx']
 debug = False
 
 JSAtt = 'python-backend='
@@ -32,10 +34,10 @@ def main():
         srcFile.close()
         fileNamesArray.append(filename)
 
-    print(getTitle(0))
-    print(getDate(0))
-    print(getContent(0))
-    print(getImageSrc(0))
+    #print(getTitle(0))
+    #print(getDate(0))
+    #rint(getContent(0))
+    #print(getImageSrc(0))
 
     #recordingNames
     k = 0
@@ -45,9 +47,9 @@ def main():
     BackendFile.write('{\n\t"names": {\n\t\t')
     for fileName in fileNamesArray:
         if(k == fileNamesArray.__len__() -  1):
-            BackendFile.write('"' + str(k) + '" : "' + fileName.removesuffix('.jsx') + '.json' + '"\n\t')
+            BackendFile.write('"' + str(k) + '" : "' + fileName.removesuffix('.jsx') + '"\n\t')
         else:
-            BackendFile.write('"' + str(k) + '" : "' + fileName.removesuffix('.jsx') + '.json' + '",\n\t\t')
+            BackendFile.write('"' + str(k) + '" : "' + fileName.removesuffix('.jsx') + '",\n\t\t')
         k += 1
     BackendFile.write('},\n\n')
 
@@ -57,10 +59,12 @@ def main():
         if(exludedPages.__contains__(filename)):
             continue
         if(j == fileNamesArray.__len__() - 1):
-            BackendFile.write('\t"' + str(j) + '" : {\n\t\t"title" : "' + getTitle(j) + '",\n\t\t"date" : "' + getDate(j) + '",\n\t\t"content" : "' + getContent(j) + '",\n\t\t"image" : "' + getImageSrc(j) + '"\n\t}\n')
+            BackendFile.write('\t"' + str(j) + '" : {\n\t\t"title" : "' + getTitle(j) + '",\n\t\t"date" : "' + getDate(j) + '",\n\t\t"content" : "' + getContent(j) + '",\n\t\t"image" : "' + getImageSrc(j) + '",\n\t\t"category" : "' + getCategory(j) +'"\n\t}\n')
         else:
-            BackendFile.write('\t"' + str(j) + '" : {\n\t\t"title" : "' + getTitle(j) + '",\n\t\t"date" : "' + getDate(j) + '",\n\t\t"content" : "' + getContent(j) + '",\n\t\t"image" : "' + getImageSrc(j) + '"\n\t},\n\n')
+            BackendFile.write('\t"' + str(j) + '" : {\n\t\t"title" : "' + getTitle(j) + '",\n\t\t"date" : "' + getDate(j) + '",\n\t\t"content" : "' + getContent(j) + '",\n\t\t"image" : "' + getImageSrc(j) + '",\n\t\t"category" : "' + getCategory(j) +'"\n\t},\n\n')
+        categoryArray.add(getCategory(j))
         j += 1
+    categoryArray.remove('')
     BackendFile.write('}')
     BackendFile.close() #all in one file so that it is easy to import everything we need at the beginning of our JS slide show
 
@@ -81,7 +85,7 @@ def main():
     for filename in fileNamesArray:
         FN2 = filename.removesuffix('.jsx')
         importString = 'import ' + FN2 + " from '" + pageDirectoryF + '/' + filename + "'\n"
-        routeString = '<Route path="/' + FN2 + '" component={' + FN2 + '} />\n'
+        routeString = '\t\t\t\t\t\t\t<Route path="/' + FN2 + '" component={' + FN2 + '} />\n'
         routingFileContents = routingFileContents[:importStart] + importString + routingFileContents[importStart:]
         importStart += importString.__len__()
         routeStart += importString.__len__()
@@ -90,6 +94,12 @@ def main():
     if(os.path.exists(routingPath)):
         os.remove(routingPath)
     routingFile = open(routingPath, 'w')
+    #Add category pages (<Route path="/web-development" render={<CategoryPage category="Web Development"/>} />) to the index.js file
+    for cat in categoryArray:
+        categoryString = '\t\t\t\t\t\t\t<Route path="/' + str(cat).lower().replace(' ', '-') + '" render={() => <CategoryPage category="' + str(cat) + '"/>} />\n'
+        routingFileContents = routingFileContents[:routeStart] + categoryString + routingFileContents[routeStart:]
+        routeStart += categoryString.__len__()
+
     routingFile.write(''.join(routingFileContents))
     routingFile.close()
 
@@ -152,7 +162,7 @@ def getContent(i):
             start += 1
         else:
             break
-    return finalContent.removeprefix('>')
+    return finalContent.removeprefix('>').replace('"', '\\"')
 
 def getImageSrc(i):
     start = sourceArray[i].index(JSAtt + '"image"')
@@ -165,8 +175,28 @@ def getImageSrc(i):
             start += 1
         else:
             break
-    finalImg = finalImg.removesuffix('"')
+    finalImg = finalImg.removesuffix('"').removeprefix('"')
     return finalImg.removeprefix("..")
+
+def getCategory(i):
+    start = sourceArray[i].index(JSAtt + '"category"')
+    start += 24 #to get us past ourself
+    finalContent = ''
+    foundInnerHTML = False
+    while(True):
+        if(start >= sourceArray[i].__len__()):
+            break
+        if(sourceArray[i][start] != '>' and not foundInnerHTML):
+            start += 1
+            continue
+        else:
+            foundInnerHTML = True
+        if(sourceArray[i][start] != '<'):
+            finalContent += sourceArray[i][start]
+            start += 1
+        else:
+            break
+    return finalContent.removeprefix('>')
 
 if __name__ == "__main__":
     main()

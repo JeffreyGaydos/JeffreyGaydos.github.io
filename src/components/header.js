@@ -6,6 +6,10 @@ class Header extends Component {
         super(props)
     }
 
+    componentWillReceiveProps() {
+        window.location.reload();
+    }
+
     render() {
         return(
             <div className="corner-header header">

@@ -13,6 +13,7 @@ class HomePage extends Component {
             menu: false,
         }
         document.title = "Jeffrey Gaydos Protfolio - Home";
+        document.body.style.backgroundColor = 'black';
     }
 
     state = {showSideNav:false}

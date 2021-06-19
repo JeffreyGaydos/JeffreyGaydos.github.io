@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(89, 89, 89);
+    height: 100%;
+}
+
+div.footer-spacer {
+    padding: 500px;
+}
+
+div.footer-pos {    
+    width: 100%;
+    z-index: 11;
+}
+
+div.card-grid-pos {
+    display: flex;
+    justify-content: center;
+    margin: 45px;
+    z-index: 0;
+}
+
+div.card-section {
+    min-height: calc(100% - 242px);
+}
+
+div.cd-grid-item {
+    padding: 0% 2.5%;
+    z-index: 0;
+}

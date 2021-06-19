@@ -1,0 +1,64 @@
+div.card-content {
+    height: 201px;
+    line-height: 20px;
+}
+
+h2.cc-content {
+    font-family: 'Avenir';
+    font-size: 14pt;
+    text-align: justify;
+    height: inherit;
+}
+
+div.cc-content-container {
+    padding: 10px 50px 0px 50px;
+    height: inherit !important;
+}
+
+h1.cc-title {
+    font-family: 'Avenir';
+    font-size: 18pt;
+    text-align: center;
+    line-height: 30px;
+}
+
+.custom-ellipsis {
+    width: 50px;
+    height: 15px;
+    margin: -25px, -7.5px;
+    position: absolute;
+    left: 41%;
+    bottom: -110px;
+    z-index: 2;
+}
+
+.cc-custom-ellipsis {
+    position: absolute;
+    bottom: 70px;
+    display: block !important;
+    margin-left: calc(50% - 22.5px);
+}
+
+.cc-dot {
+    transition: all 0.75s ease;
+    background-color: rgb(89, 89, 89);
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    margin: -2.5px;
+    position: absolute;
+    top: 7px;
+}
+
+#cc-dot1 {
+    left: 15px;
+}
+
+#cc-dot2 {
+    left: 25px;
+
+}
+
+#cc-dot3 {
+    left: 35px;
+}

@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(89, 89, 89);
+}
+
+div.article-wrapper {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+}
+
+div.content-wrapper {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    padding: 35px;
+    min-height: calc(100% - 160px);
+    padding-top: 100px;
+}
+
+div.content-divider {
+    width: 95%;
+    height: 3px;
+    background-color: rgb(192, 0, 0);
+    margin: auto;
+}
+
+h1.article {
+    margin-bottom: 30px;
+    font-family: 'Avenir bold';
+    color: rgb(192, 0, 0);
+    text-align: center;
+}
+
+h2.article, h3.article {
+    text-align: left;
+    margin-top: 30px;
+    font-family: 'Avenir';
+    color: black;
+    line-height: 35px;
+}
+
+li.article {
+    text-align: left;
+    font-family: 'Avenir bold';
+    font-size: 14pt;
+    color: black;
+    line-height: 35px;
+}
+
+p.article {
+    text-align: left;
+    margin-top: 30px;
+    font-family: 'Avenir bold';
+    color: rgb(89, 89, 89);
+}
+
+h2.date {
+    font-family: 'Avenir';
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+img.article {
+    max-width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+div.article-ch-pos {
+    position: fixed;
+    right: 0px;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.footer {
+    text-align: left;
+    width: 100%;
+}
+
+.link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link.article {
+    color:rgb(192, 0, 0);
+}
+
+.link.article:hover {
+    color:rgb(89, 89, 89)
+}
+
+.heading {
+    font-family: 'Avenir bold' !important;
+}
+
+.flex-left {
+    display: flex;
+    justify-content: left;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 15px;
+}

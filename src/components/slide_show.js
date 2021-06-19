@@ -12,7 +12,7 @@ var intervalBool = true;
 class SlideShow extends Component {
     constructor(props) {
         super(props);        
-        var formattedName = backend['names'][0].substr(0, backend['names'][0].length - 5);
+        var formattedName = backend['names'][0];
         var numPages = Object.keys(backend['names']).length;
         var intID = setInterval(this.SlideInterval.bind(this), 10000);
         var currentSlideNum = 0;
@@ -50,9 +50,13 @@ class SlideShow extends Component {
                 document.getElementsByClassName("ss-description-box")[0].style.opacity = 0;
                 document.getElementsByClassName("ss-image")[0].style.setProperty("opacity", 0, "important");
                 setTimeout(() => {
+                    try {
                     this.SSForwardsStateUpdate();
                     document.getElementsByClassName("ss-description-box")[0].style.opacity = 1;
                     document.getElementsByClassName("ss-image")[0].style.setProperty("opacity", 1, "important");
+                    } catch(e) {
+                        //ignore errors, we are just on another page...
+                    }
                 }, 750);
                 setTimeout(() => {
                     slideActive = false;
@@ -65,7 +69,7 @@ class SlideShow extends Component {
 
     SSForwardsStateUpdate() {
         var currentSlideNum = this.state.currentSlide < this.state.length - 1 ? this.state.currentSlide + 1 : 0;
-        var formattedName = backend['names'][this.state.currentSlide].substr(0, backend['names'][this.state.currentSlide].length - 5);
+        var formattedName = backend['names'][this.state.currentSlide];
         this.setState((prevState) => ({
             currentSlide: currentSlideNum,
             title: backend[currentSlideNum].title,
@@ -95,7 +99,7 @@ class SlideShow extends Component {
 
     SSBackwardsStateUpdate() {
         var currentSlideNum = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : this.state.length - 1;
-        var formattedName = backend['names'][this.state.currentSlide].substr(0, backend['names'][this.state.currentSlide].length - 5);
+        var formattedName = backend['names'];
         this.setState((prevState) => ({
             currentSlide: currentSlideNum,
             title: backend[currentSlideNum].title,

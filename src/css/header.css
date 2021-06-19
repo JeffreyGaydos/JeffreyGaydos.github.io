@@ -1,5 +1,5 @@
 div.header {
-    width: calc(100% - 248.48px);
+    width: calc(100% - 250px);
     height: 107px;
 }
 
@@ -8,6 +8,6 @@ h1.h-heading {
     font-family: 'Avenir';
     font-size: 30pt;
     padding: 10px;
-    margin-left: 248.48px;
+    margin-left: 250px;
     text-align: center;
 }

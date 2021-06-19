@@ -5,6 +5,7 @@ div.card {
     box-shadow: black 5px 5px 13px;
     position: relative;
     transition: all 0.2s ease;
+    z-index: 0;
 }
 
 div.card:hover {
@@ -16,6 +17,14 @@ img.cd-image {
     width: 100%;
     height: 150px;
     object-fit: cover;
+}
+
+img.cd-icon {
+    width: 55px;
+    border-radius: 100%;
+    position: absolute;
+    right: 0px;
+    margin: 5px;
 }
 
 div.cd-date-box {
@@ -31,4 +40,26 @@ h2.cd-date {
     font-family: 'Avenir';
     font-size: 16pt;
     text-align: left;
+}
+
+button.cd-read-more {
+    position: absolute;
+    bottom: 65px;
+    margin-left: calc(50% - 65px);
+    padding: 5px 0px;
+    width: 130px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(192, 0, 0);
+    box-shadow: none;
+    border-radius: 5px;
+    font-family: 'Avenir Bold';
+    font-size: 12pt;
+    color: rgb(192, 0, 0);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button.cd-read-more:hover {
+    color: white;
+    background-color: rgb(192, 0, 0);
 }
