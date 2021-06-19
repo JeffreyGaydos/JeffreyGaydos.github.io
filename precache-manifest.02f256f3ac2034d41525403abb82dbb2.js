@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "70c941c6ee1487755082fe215f2fd9e9",
+    "revision": "911497c87c2563694aa0d5bff4f10d78",
     "url": "/index.html"
   },
   {
-    "revision": "1458a7c4f9492d97aaca",
-    "url": "/static/css/main.45b100fd.chunk.css"
+    "revision": "37d8e0e14cae374339c4",
+    "url": "/static/css/main.3d1a936a.chunk.css"
   },
   {
-    "revision": "d25b6310dd1c103e4912",
-    "url": "/static/js/2.ec94845c.chunk.js"
+    "revision": "108163920b4254b5147d",
+    "url": "/static/js/2.dadf2a99.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.ec94845c.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.dadf2a99.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1458a7c4f9492d97aaca",
-    "url": "/static/js/main.33add3a2.chunk.js"
+    "revision": "37d8e0e14cae374339c4",
+    "url": "/static/js/main.03581d4a.chunk.js"
   },
   {
     "revision": "4f2b1704eab49d50853b",
@@ -32,8 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/AvenirNextLTPro-UltLt.31f52d48.otf"
   },
   {
+    "revision": "982e4b85da220f8967a9ba95c8060373",
+    "url": "/static/media/Buttons.982e4b85.png"
+  },
+  {
+    "revision": "f5ee2926348ae4f72e3268c0f01317d9",
+    "url": "/static/media/ContentsGen.f5ee2926.png"
+  },
+  {
     "revision": "bc323fea7b11b3b846b9655cea629d1e",
     "url": "/static/media/Cutscene Example.bc323fea.PNG"
+  },
+  {
+    "revision": "6c809381d81e87f44b34c4f914a88571",
+    "url": "/static/media/DarkMode.6c809381.png"
   },
   {
     "revision": "22afed5854c1af8f251b0190a8d5b21c",
@@ -44,12 +56,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Fendport Header.49a8728b.PNG"
   },
   {
+    "revision": "36eabdc3c47ee76fcbd71e25b8e2bd9d",
+    "url": "/static/media/HeaderModifications.36eabdc3.png"
+  },
+  {
     "revision": "550e8c242b496cdadb3345c1b0aea78f",
     "url": "/static/media/In-game Toriden.550e8c24.PNG"
   },
   {
     "revision": "8ce22dd6ae02aa880020a8dde73955eb",
     "url": "/static/media/Lag Example.8ce22dd6.PNG"
+  },
+  {
+    "revision": "d4e601232641ad4ee29dea86ac940209",
+    "url": "/static/media/LightMode.d4e60123.png"
   },
   {
     "revision": "285a80bdc8b8885ff513054b1dc0c728",
@@ -62,10 +82,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "479c17bcc7ae1f01d0e4e365949d00b1",
     "url": "/static/media/logo-big-border.479c17bc.png"
-  },
-  {
-    "revision": "7db45720bf1fcc84e7726c091521c66c",
-    "url": "/static/media/project1tanksicon.7db45720.PNG"
   },
   {
     "revision": "11527124ecfa19ebd2e3dd4f74ba11d8",
