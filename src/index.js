@@ -8,12 +8,8 @@ import CategoryPage from './pages/category_page.jsx';
 //import gameDesign from './pages/gameDesign.jsx'
 import _404Page from './pages/404page.jsx';
 /*Python Backend Imports Start*/
-import Project1NWNToolset from './pages/Project1NWNToolset.jsx'
-import Project2TankEncyclopedia from './pages/Project2TankEncyclopedia.jsx'
-import Project2TankEncyclopedia2 from './pages/Project2TankEncyclopedia2.jsx'
-import Project2TankEncyclopedia3 from './pages/Project2TankEncyclopedia3.jsx'
-import Project2TankEncyclopedia4 from './pages/Project2TankEncyclopedia4.jsx'
-import Project2TankEncyclopedia5 from './pages/Project2TankEncyclopedia5.jsx'
+import NWNToolset from './pages/NWNToolset.jsx'
+import TankEncyclopedia from './pages/TankEncyclopedia.jsx'
 /*Python Backend Imports End*/
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HTMLPort from './components/html_port';
@@ -37,12 +33,8 @@ ReactDOM.render(
               <Route path="/about" component={About} />
               <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
- 							<Route path="/Project1NWNToolset" component={Project1NWNToolset} />
-							<Route path="/Project2TankEncyclopedia" component={Project2TankEncyclopedia} />
-							<Route path="/Project2TankEncyclopedia2" component={Project2TankEncyclopedia2} />
-							<Route path="/Project2TankEncyclopedia3" component={Project2TankEncyclopedia3} />
-							<Route path="/Project2TankEncyclopedia4" component={Project2TankEncyclopedia4} />
-							<Route path="/Project2TankEncyclopedia5" component={Project2TankEncyclopedia5} />
+ 							<Route path="/NWNToolset" component={NWNToolset} />
+							<Route path="/TankEncyclopedia" component={TankEncyclopedia} />
 							<Route path="/web-development" render={() => <CategoryPage category="Web Development"/>} />
 							<Route path="/game-development" render={() => <CategoryPage category="Game Development"/>} />
 {/* Python Backend Routes End */}

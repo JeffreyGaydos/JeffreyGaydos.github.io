@@ -1,58 +1,22 @@
 {
 	"names": {
-		"0" : "Project1NWNToolset",
-		"1" : "Project2TankEncyclopedia",
-		"2" : "Project2TankEncyclopedia2",
-		"3" : "Project2TankEncyclopedia3",
-		"4" : "Project2TankEncyclopedia4",
-		"5" : "Project2TankEncyclopedia5"
+		"0" : "NWNToolset",
+		"1" : "TankEncyclopedia"
 	},
 
 	"0" : {
 		"title" : "Neverwinter Nights Toolset - High School Capstone",
 		"date" : "May, 2017 - August 2018",
-		"content" : "My high school capstone, this project involved the use of a relatively obscure tool known as the \"Neverwinter Nights Toolset\" from the 2002 game \"Neverwinter Nights\". The project consisted of world building, creative writing, general game design principles, and scripting in a custom C-based language.",
+		"content" : "My high school capstone, this project involved the use of a relatively obscure tool known as the \"Neverwinter Nights Toolset\" from the 2002 game \"Neverwinter Nights\". The project consisted of world building, creative writing, general game design principles, and scripting in a custom C-based language. Though the programming was not difficult, learning the API of the language proved to be a challenge due to the obscurity of the old program. However, there was plenty of in-editor documentation, and the tool itself was designed for beginning programmers.",
 		"image" : "/images/project4toolset.PNG",
 		"category" : "Game Development"
 	},
 
 	"1" : {
-		"title" : "Volunteer Web Developer - Tank Eneyclopedia",
+		"title" : "Volunteer Web Developer - Tank Encyclopedia",
 		"date" : "May, 2020 - Present",
-		"content" : "Tank Encyclopedia is run by a community of volunteers ranging from amateur historians to professionals. Near the end of 2019, the managers of this community switched hosts for the website and started using Wordpress. After urgings from my brother Brian Gaydos (who had been considerably involved in the community), I decided to aid creating features for the website as well as helping with general maintenance. Having little to no experience in Wordpress was a learning curve, but using my background in CSS and a few tutorials, I made my first feature for the website in a week. Since MONTH DAY 2020, I have implemented roughly 7 features and other small modifications for the website over 1500 lines of code. Considerable local testing (of individual pages) was done for each feature, but some unexpected issues still arose. Looking back, I would have liked to create my own plugin for Wordpress (which is much more modular) rather than only using a child  theme. This project advanced my knowledge and experience in Web Development principles, JavaScript (and jQuery), and CSS.",
-		"image" : "/images/logo-big-border.png",
-		"category" : "Web Development"
-	},
-
-	"2" : {
-		"title" : "Tank Encyclopedia - Volunteer Web Developer",
-		"date" : "May, 2020 - Present",
-		"content" : "Here is some Tank enecyclopedia content for this post. Wee look at all this DATA.",
-		"image" : "/images/project1tanksicon.PNG",
-		"category" : "Web Development"
-	},
-
-	"3" : {
-		"title" : "Tank Encyclopedia - Volunteer Web Developer",
-		"date" : "May, 2020 - Present",
-		"content" : "Here is some Tank enecyclopedia content for this post. Wee look at all this DATA.",
-		"image" : "/images/project1tanksicon.PNG",
-		"category" : "Web Development"
-	},
-
-	"4" : {
-		"title" : "Tank Encyclopedia - Volunteer Web Developer",
-		"date" : "May, 2020 - Present",
-		"content" : "Here is some Tank enecyclopedia content for this post. Wee look at all this DATA.",
-		"image" : "/images/project1tanksicon.PNG",
-		"category" : "Web Development"
-	},
-
-	"5" : {
-		"title" : "Tank Encyclopedia - Volunteer Web Developer",
-		"date" : "May, 2020 - Present",
-		"content" : "Here is some Tank enecyclopedia content for this post. Wee look at all this DATA.",
-		"image" : "/images/project1tanksicon.PNG",
+		"content" : "Tank Encyclopedia is run by a community of volunteers ranging from amateur historians to professionals. Near the end of 2019, the managers of this community switched hosts for the website and started using Wordpress. After urgings from my brother Brian Gaydos (who had been considerably involved in the community), I decided to aid in creating features for the website as well as helping with general maintenance. Having little to no experience in Wordpress was a learning curve, but using my background in CSS and a few tutorials, I made my first feature for the website in a week. Since May of 2020, I have implemented roughly 5 features and other small modifications for the website. Considerable local testing was done for each feature, and I eventually set up a local development server using XAMP. Recently, I moved all the code from my child theme to a plugin with togglable features to aid in maintenance and stability of the website. This project advanced my knowledge and experience in Web Development principles, networking principles, JavaScript (and jQuery), and CSS.",
+		"image" : "/images/TankEncyclopediaHomepage.png",
 		"category" : "Web Development"
 	}
 }

@@ -23,6 +23,7 @@ class NWNToolset extends Component {
             menu: false,
         }
         document.title = "Jeffrey Gaydos Portfolio - NWN Toolset";
+        document.body.style.backgroundColor = 'rgb(89, 89, 89)';
     }
     
     render() {

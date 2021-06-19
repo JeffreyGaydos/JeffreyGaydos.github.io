@@ -7,8 +7,9 @@ class Article extends Component {
     constructor(props) {
         super(props);
         document.body.style.backgroundColor = 'nothing !important';
-        document.body.style.backgroundImage = '"' + this.props.image + '"';
-        console.log("CONSTURCT)");
+        document.body.style.backgroundImage = '"' + this.props.image + '"';        
+
+        document.body.style.backgroundColor = 'rgb(89, 89, 89)';
     }
 
     render() {
