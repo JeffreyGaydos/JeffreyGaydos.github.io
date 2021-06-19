@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.ef03856d.chunk.css",
-    "main.js": "/static/js/main.0cd9d287.chunk.js",
-    "main.js.map": "/static/js/main.0cd9d287.chunk.js.map",
+    "main.css": "/static/css/main.7e2300cf.chunk.css",
+    "main.js": "/static/js/main.5dd4026b.chunk.js",
+    "main.js.map": "/static/js/main.5dd4026b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.19ccc7f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.19ccc7f6.js.map",
-    "static/js/2.b4ae4283.chunk.js": "/static/js/2.b4ae4283.chunk.js",
-    "static/js/2.b4ae4283.chunk.js.map": "/static/js/2.b4ae4283.chunk.js.map",
+    "static/js/2.ec94845c.chunk.js": "/static/js/2.ec94845c.chunk.js",
+    "static/js/2.ec94845c.chunk.js.map": "/static/js/2.ec94845c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.8e28acfaca144415d288816bb4f59045.js": "/precache-manifest.8e28acfaca144415d288816bb4f59045.js",
+    "precache-manifest.13334437844a305567567e62d701e19f.js": "/precache-manifest.13334437844a305567567e62d701e19f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.ef03856d.chunk.css.map": "/static/css/main.ef03856d.chunk.css.map",
-    "static/js/2.b4ae4283.chunk.js.LICENSE.txt": "/static/js/2.b4ae4283.chunk.js.LICENSE.txt",
+    "static/css/main.7e2300cf.chunk.css.map": "/static/css/main.7e2300cf.chunk.css.map",
+    "static/js/2.ec94845c.chunk.js.LICENSE.txt": "/static/js/2.ec94845c.chunk.js.LICENSE.txt",
     "static/media/homepage.css": "/static/media/AvenirNextLTPro-UltLt.31f52d48.otf",
-    "static/media/face.PNG": "/static/media/face.7e3659d3.PNG",
+    "static/media/logo-big-border.png": "/static/media/logo-big-border.479c17bc.png",
     "static/media/project1tanksicon.PNG": "/static/media/project1tanksicon.7db45720.PNG",
-    "static/media/project4toolset.PNG": "/static/media/project4toolset.11527124.PNG"
+    "static/media/project4toolset.PNG": "/static/media/project4toolset.11527124.PNG",
+    "static/media/zip.ico": "/static/media/zip.41e7f267.ico"
   },
   "entrypoints": [
     "static/js/runtime-main.19ccc7f6.js",
-    "static/js/2.b4ae4283.chunk.js",
-    "static/css/main.ef03856d.chunk.css",
-    "static/js/main.0cd9d287.chunk.js"
+    "static/js/2.ec94845c.chunk.js",
+    "static/css/main.7e2300cf.chunk.css",
+    "static/js/main.5dd4026b.chunk.js"
   ]
 }
