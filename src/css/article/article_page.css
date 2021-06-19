@@ -117,3 +117,23 @@ div.article-ch-pos {
     position: relative;
     top: 15px;
 }
+
+.split-right {
+    width: 48%;
+    margin-left: 4%;
+}
+
+.split-left {
+    width: 48%;
+}
+
+img.split-right, img.split-left{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.split-left, ul.split-right, ol.split-left, ol.split-right {
+    width: 44%;
+    margin: 0px;
+}

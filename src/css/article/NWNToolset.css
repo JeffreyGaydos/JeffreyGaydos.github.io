@@ -3,3 +3,8 @@ img.NWN {
     height: 300px;
     width: 100%;
 }
+
+#NWNW-FeedbackImage {
+    max-height: 300px;
+    object-fit: cover;
+}
