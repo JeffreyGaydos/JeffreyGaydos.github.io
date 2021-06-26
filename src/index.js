@@ -12,7 +12,7 @@ import Centripetal from './pages/Centripetal.jsx'
 import NWNToolset from './pages/NWNToolset.jsx'
 import TankEncyclopedia from './pages/TankEncyclopedia.jsx'
 /*Python Backend Imports End*/
-import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom"; //Using hash router to prevent github 404 errors (https://www.bing.com/search?q=react%20router%20404%20on%20refresh%20github%20pages&qs=n&form=QBRE&sp=-1&pq=react%20router%20404%20on%20refresh%20github%20page&sc=2-39&sk=&cvid=CEF0DBE5EB27412380C26C7889BEF402)
 import HTMLPort from './components/html_port';
 import WIPNotification from './components/wip_notification';
 
