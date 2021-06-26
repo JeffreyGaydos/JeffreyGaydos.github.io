@@ -11,6 +11,7 @@
 
 import React from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 import CornerHeader from '../components/corner_header';
 import '../css/article/NWNToolset.css';
@@ -40,7 +41,8 @@ class NWNToolset extends Component {
                 <img className="article NWN" python-backend="image" src={require("../images/project4toolset.PNG")} />
                 <div className="content-divider"></div>
                 <h2 className="article" python-backend="content">My high school capstone, this project involved the use of a relatively obscure tool known as the “Neverwinter Nights Toolset” from the 2002 game “Neverwinter Nights”. The project consisted of world building, creative writing, general game design principles, and scripting in a custom C-based language.</h2>
-                <p className="article" python-backend="category">Category: Game Development</p>
+                <p className="article inline footer">Category: <Link className="link" to="/game-development"><span python-backend="category">Game Development</span></Link></p>
+                <p className="article inline footer">Last Updated: 6/19/2021</p>
             </div>
             <Footer />
             </>

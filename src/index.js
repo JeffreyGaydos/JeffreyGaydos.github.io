@@ -8,10 +8,11 @@ import CategoryPage from './pages/category_page.jsx';
 //import gameDesign from './pages/gameDesign.jsx'
 import _404Page from './pages/404page.jsx';
 /*Python Backend Imports Start*/
+import Centripetal from './pages/Centripetal.jsx'
 import NWNToolset from './pages/NWNToolset.jsx'
 import TankEncyclopedia from './pages/TankEncyclopedia.jsx'
 /*Python Backend Imports End*/
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom";
 import HTMLPort from './components/html_port';
 import WIPNotification from './components/wip_notification';
 
@@ -33,10 +34,11 @@ ReactDOM.render(
               <Route path="/about" component={About} />
               <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
- 							<Route path="/NWNToolset" component={NWNToolset} />
+ 							<Route path="/Centripetal" component={Centripetal} />
+							<Route path="/NWNToolset" component={NWNToolset} />
 							<Route path="/TankEncyclopedia" component={TankEncyclopedia} />
-							<Route path="/web-development" render={() => <CategoryPage category="Web Development"/>} />
 							<Route path="/game-development" render={() => <CategoryPage category="Game Development"/>} />
+							<Route path="/web-development" render={() => <CategoryPage category="Web Development"/>} />
 {/* Python Backend Routes End */}
               <Route component={_404Page}/> {/* Works like the "default" case in an imperitave switch statement */}
             </Switch>

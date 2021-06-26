@@ -3,7 +3,6 @@ import { Component } from 'react';
 import Footer from '../components/footer';
 import CornerHeader from '../components/corner_header';
 import { Link } from 'react-router-dom';
-import Header from '../components/header';
 import '../css/article/NWNToolset.css';
 import '../css/article/article_page.css';
 
