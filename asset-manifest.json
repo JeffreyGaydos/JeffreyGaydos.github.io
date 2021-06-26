@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.3d1a936a.chunk.css",
-    "main.js": "/static/js/main.03581d4a.chunk.js",
-    "main.js.map": "/static/js/main.03581d4a.chunk.js.map",
+    "main.css": "/static/css/main.fda7d0e3.chunk.css",
+    "main.js": "/static/js/main.a8eaf86d.chunk.js",
+    "main.js.map": "/static/js/main.a8eaf86d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.19ccc7f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.19ccc7f6.js.map",
-    "static/js/2.dadf2a99.chunk.js": "/static/js/2.dadf2a99.chunk.js",
-    "static/js/2.dadf2a99.chunk.js.map": "/static/js/2.dadf2a99.chunk.js.map",
+    "static/js/2.a5ff0c91.chunk.js": "/static/js/2.a5ff0c91.chunk.js",
+    "static/js/2.a5ff0c91.chunk.js.map": "/static/js/2.a5ff0c91.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.02f256f3ac2034d41525403abb82dbb2.js": "/precache-manifest.02f256f3ac2034d41525403abb82dbb2.js",
+    "precache-manifest.0d3468383a06c3bba1b79f1a107d55a8.js": "/precache-manifest.0d3468383a06c3bba1b79f1a107d55a8.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.3d1a936a.chunk.css.map": "/static/css/main.3d1a936a.chunk.css.map",
-    "static/js/2.dadf2a99.chunk.js.LICENSE.txt": "/static/js/2.dadf2a99.chunk.js.LICENSE.txt",
+    "static/css/main.fda7d0e3.chunk.css.map": "/static/css/main.fda7d0e3.chunk.css.map",
+    "static/js/2.a5ff0c91.chunk.js.LICENSE.txt": "/static/js/2.a5ff0c91.chunk.js.LICENSE.txt",
     "static/media/homepage.css": "/static/media/AvenirNextLTPro-UltLt.31f52d48.otf",
     "static/media/Buttons.png": "/static/media/Buttons.982e4b85.png",
+    "static/media/CentripetalBanner.png": "/static/media/CentripetalBanner.23bc2d81.png",
+    "static/media/CentripetalLevel2.png": "/static/media/CentripetalLevel2.bc0c4632.png",
     "static/media/ContentsGen.png": "/static/media/ContentsGen.f5ee2926.png",
     "static/media/Cutscene Example.PNG": "/static/media/Cutscene Example.bc323fea.PNG",
     "static/media/DarkMode.png": "/static/media/DarkMode.6c809381.png",
@@ -31,8 +33,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.19ccc7f6.js",
-    "static/js/2.dadf2a99.chunk.js",
-    "static/css/main.3d1a936a.chunk.css",
-    "static/js/main.03581d4a.chunk.js"
+    "static/js/2.a5ff0c91.chunk.js",
+    "static/css/main.fda7d0e3.chunk.css",
+    "static/js/main.a8eaf86d.chunk.js"
   ]
 }
