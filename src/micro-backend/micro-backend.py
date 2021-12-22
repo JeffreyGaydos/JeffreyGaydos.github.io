@@ -8,6 +8,21 @@ contentArray = []
 
 categoryArray = {''}
 
+monthArray = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+
 routingPath = 'src\index.js'
 pageDirectory = 'src\pages'
 pageDirectoryF = './pages'
@@ -27,17 +42,29 @@ def main():
             print(pageDirectory + filename)
         srcFile = open(pageDirectory + '\\' + filename)
         sourceArray.append(srcFile.read())
+        fileNamesArray.append(filename)
+        currDate = getDate(sourceArray.__len__() - 1).split(" ")
+        print(currDate)
+        if(sourceArray.__len__() > 1):
+            sourceArray.pop()
+            fileNamesArray.pop()
+            srcFile.seek(0)
+        else:
+            continue
+
+        #insertion sort
+        insertionSortByDate(srcFile, filename, currDate)
+        
         if(debug):
-            print(sourceArray[i])
-            print('\n************************************************************************\n')
+            print(f'\n**START:{i}**********************************************************************\n')
+            print(sourceArray[i][:500])
+            print(f'\n**END:{i}**********************************************************************\n')
             i += 1
         srcFile.close()
-        fileNamesArray.append(filename)
 
-    #print(getTitle(0))
-    #print(getDate(0))
-    #rint(getContent(0))
-    #print(getImageSrc(0))
+    #we sorted backwards...
+    sourceArray.reverse()
+    fileNamesArray.reverse()
 
     #recordingNames
     k = 0
@@ -103,6 +130,57 @@ def main():
     routingFile.write(''.join(routingFileContents))
     routingFile.close()
 
+# Sorts all the projects by end date, and then if
+# by start date if a tie arises. Projects that are
+# active (i.e. Present) are always more recent than
+# those that are complete
+def insertionSortByDate(srcFile, filename, currDate):
+    inserted = False
+    for j in range(sourceArray.__len__()):
+        da = getDate(j).split(" ")
+        if da.__len__() < 5:
+            if currDate.__len__() < 5:
+                #both projects are present, sort by start date
+                if da[1] > currDate[1]:
+                    inserted = inLoopInsert(j, srcFile, filename)
+                    break
+                elif da[1] == currDate[1]:
+                    if(monthCompare(da[0].removesuffix(","), currDate[0].removesuffix(",")) > 0):
+                        inserted = inLoopInsert(j, srcFile, filename)
+                        break
+            else:
+                inserted = inLoopInsert(j, srcFile, filename)
+                break
+        elif da.__len__() == 5:
+            if currDate.__len__() < 5:
+                continue
+            else:
+                #both are "finished" projects
+                if da[4] > currDate[4]:
+                    inserted = inLoopInsert(j, srcFile, filename)
+                    break
+                elif da[4] == currDate[4]:
+                    if(monthCompare(da[3].removesuffix(","), currDate[3].removesuffix(",")) > 0):
+                        inserted = inLoopInsert(j, srcFile, filename)
+                        break
+                    elif(monthCompare(da[3].removesuffix(","), currDate[3].removesuffix(",")) == 0):
+                        if da[1] > currDate[1]:
+                            inserted = inLoopInsert(j, srcFile, filename)
+                            break
+                        elif da[1] == currDate[1]:
+                            if(monthCompare(da[0].removesuffix(","), currDate[0].removesuffix(",")) > 0):
+                                inserted = inLoopInsert(j, srcFile, filename)
+                                break
+    
+    if not inserted:
+        srcFile.seek(0)
+        sourceArray.append(srcFile.read())
+        fileNamesArray.append(filename)
+
+def inLoopInsert(j, srcFile, filename):
+    sourceArray.insert(j, srcFile.read())
+    fileNamesArray.insert(j, filename)
+    return True
 
 def getTitle(i):
     start = sourceArray[i].index(JSAtt + '"title"')
@@ -197,6 +275,9 @@ def getCategory(i):
         else:
             break
     return finalContent.removeprefix('>')
+
+def monthCompare(month1, month2):
+    return monthArray.index(month1) - monthArray.index(month2)
 
 if __name__ == "__main__":
     main()

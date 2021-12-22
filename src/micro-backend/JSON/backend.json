@@ -1,46 +1,14 @@
 {
 	"names": {
-		"0" : "Centripetal",
-		"1" : "NWNToolset",
-		"2" : "Origamist",
-		"3" : "TankEncyclopedia",
-		"4" : "ThisSite",
-		"5" : "Unum"
+		"0" : "ThisSite",
+		"1" : "TankEncyclopedia",
+		"2" : "Unum",
+		"3" : "Origamist",
+		"4" : "Centripetal",
+		"5" : "NWNToolset"
 	},
 
 	"0" : {
-		"title" : "Centripetal - Unreal Engine 4",
-		"date" : "May, 2020 - August 2020",
-		"content" : "Centripetal is a physics-based game set in space where the player has the power to \"fix\" the solar system they are presented with. Obstacles to achieving this goal include the fragility of the planets, incoming comets, asteroids, other planets, and a time limit. The original idea came from an artist and member of the Game Creation Club at OSU who suggested the idea for the Global Game Jam for 2019 (the theme was \"repair\"). Nobody created the idea for the game jam, and I was intrigued enough to create it myself afterwards. A key principle I wanted to follow was to make everything in the game myself (or as much as possible). As such, most game elements, music, and sounds were created by me using various tools. Other elements were created by Epic Games and other artists. Another goal I set for myself was to finish the game before the 2020-2021 school year. This increased my time management skills and forced me to minimize my game to the most necessary and impactful game elements, reinforcing game design principles. Additionally, this project gave me an introduction to the object-oriented side of C++ rather than the procedural side.",
-		"image" : "/images/CentripetalTitle.PNG",
-		"category" : "Game Development"
-	},
-
-	"1" : {
-		"title" : "Neverwinter Nights Toolset - High School Capstone",
-		"date" : "May, 2017 - August 2018",
-		"content" : "My high school capstone, this project involved the use of a relatively obscure tool known as the \"Neverwinter Nights Toolset\" from the 2002 game \"Neverwinter Nights\". The project consisted of world building, creative writing, general game design principles, and scripting in a custom C-based language. Though the programming was not difficult, learning the API of the language proved to be a challenge due to the obscurity of the old program. However, there was plenty of in-editor documentation, and the tool itself was designed for beginning programmers.",
-		"image" : "/images/project4toolset.PNG",
-		"category" : "Game Development"
-	},
-
-	"2" : {
-		"title" : "Origamist - Unity",
-		"date" : "December, 2019 - December 2020",
-		"content" : "A smaller, more experimental project that allowed me to explore asset creation, animation, shaders, and procedural generation. Inspired from my childhood hobby (of origami), I aimed to create a relaxing, origami world rather than a full game. Currently, this project serves as a playground for me to try out new skills and techniques without diving into a large scale project.",
-		"image" : "/images/project2origamist.PNG",
-		"category" : "Game Development"
-	},
-
-	"3" : {
-		"title" : "Volunteer Web Developer - Tank Encyclopedia",
-		"date" : "May, 2020 - Present",
-		"content" : "Tank Encyclopedia is run by a community of volunteers ranging from amateur historians to professionals. Near the end of 2019, the managers of this community switched hosts for the website and started using Wordpress. After urgings from my brother Brian Gaydos (who had been considerably involved in the community), I decided to aid in creating features for the website as well as helping with general maintenance. Having little to no experience in Wordpress was a learning curve, but using my background in CSS and a few tutorials, I made my first feature for the website in a week. Since May of 2020, I have implemented roughly 5 features and other small modifications for the website. Considerable local testing was done for each feature, and I eventually set up a local development server using XAMP. Recently, I moved all the code from my child theme to a plugin with togglable features to aid in maintenance and stability of the website. This project advanced my knowledge and experience in Web Development principles, networking principles, JavaScript (and jQuery), and CSS.",
-		"image" : "/images/TankEncyclopediaHomepage.png",
-		"category" : "Web Development"
-	},
-
-	"4" : {
 		"title" : "This Site - React.js and GitHub Pages",
 		"date" : "May, 2021 - Present",
 		"content" : "This site was previously implemented using Bootstrap, and after learning of the power of React.js, I wanted to put it to work. Additionally, I found my bootstrap site to have an outdated style. Resolving to make an overall better portfolio site, I decided to create this site very carefully, with plenty of input from others about styling.",
@@ -48,11 +16,43 @@
 		"category" : "Web Development"
 	},
 
-	"5" : {
+	"1" : {
+		"title" : "Volunteer Web Developer - Tank Encyclopedia",
+		"date" : "May, 2020 - Present",
+		"content" : "Tank Encyclopedia is run by a community of volunteers ranging from amateur historians to professionals. Near the end of 2019, the managers of this community switched hosts for the website and started using Wordpress. After urgings from my brother Brian Gaydos (who had been considerably involved in the community), I decided to aid in creating features for the website as well as helping with general maintenance. Having little to no experience in Wordpress was a learning curve, but using my background in CSS and a few tutorials, I made my first feature for the website in a week. Since May of 2020, I have implemented roughly 5 features and other small modifications for the website. Considerable local testing was done for each feature, and I eventually set up a local development server using XAMP. Recently, I moved all the code from my child theme to a plugin with togglable features to aid in maintenance and stability of the website. This project advanced my knowledge and experience in Web Development principles, networking principles, JavaScript (and jQuery), and CSS.",
+		"image" : "/images/TankEncyclopediaHomepage.png",
+		"category" : "Web Development"
+	},
+
+	"2" : {
 		"title" : "Unum - Accessibility Web Developer",
 		"date" : "June, 2021 - August 2021",
 		"content" : "Description about Unum to come...",
 		"image" : "/images/UnumLogoWhite.jpg",
 		"category" : "Web Development"
+	},
+
+	"3" : {
+		"title" : "Origamist - Unity",
+		"date" : "December, 2019 - December 2020",
+		"content" : "A smaller, more experimental project that allowed me to explore asset creation, animation, shaders, and procedural generation. Inspired from my childhood hobby (of origami), I aimed to create a relaxing, origami world rather than a full game. Currently, this project serves as a playground for me to try out new skills and techniques without diving into a large scale project.",
+		"image" : "/images/project2origamist.PNG",
+		"category" : "Game Development"
+	},
+
+	"4" : {
+		"title" : "Centripetal - Unreal Engine 4",
+		"date" : "May, 2020 - August 2020",
+		"content" : "Centripetal is a physics-based game set in space where the player has the power to \"fix\" the solar system they are presented with. Obstacles to achieving this goal include the fragility of the planets, incoming comets, asteroids, other planets, and a time limit. The original idea came from an artist and member of the Game Creation Club at OSU who suggested the idea for the Global Game Jam for 2019 (the theme was \"repair\"). Nobody created the idea for the game jam, and I was intrigued enough to create it myself afterwards. A key principle I wanted to follow was to make everything in the game myself (or as much as possible). As such, most game elements, music, and sounds were created by me using various tools. Other elements were created by Epic Games and other artists. Another goal I set for myself was to finish the game before the 2020-2021 school year. This increased my time management skills and forced me to minimize my game to the most necessary and impactful game elements, reinforcing game design principles. Additionally, this project gave me an introduction to the object-oriented side of C++ rather than the procedural side.",
+		"image" : "/images/CentripetalTitle.PNG",
+		"category" : "Game Development"
+	},
+
+	"5" : {
+		"title" : "Neverwinter Nights Toolset - High School Capstone",
+		"date" : "May, 2017 - August 2018",
+		"content" : "My high school capstone, this project involved the use of a relatively obscure tool known as the \"Neverwinter Nights Toolset\" from the 2002 game \"Neverwinter Nights\". The project consisted of world building, creative writing, general game design principles, and scripting in a custom C-based language. Though the programming was not difficult, learning the API of the language proved to be a challenge due to the obscurity of the old program. However, there was plenty of in-editor documentation, and the tool itself was designed for beginning programmers.",
+		"image" : "/images/project4toolset.PNG",
+		"category" : "Game Development"
 	}
 }
