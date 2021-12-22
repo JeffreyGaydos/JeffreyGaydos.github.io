@@ -95,12 +95,12 @@ class Centripetal extends Component {
                 </div>
                 <div className="flex-left">
                     <img src={require("../images/icons/zip.ico")} alt="zip file icon" className="icon"/>
-                    <p className="article"><a className="article link" href={process.env.PUBLIC_URL + "downloads/Centripetal.zip"} download>Centripetal Executable Game</a></p>
+                    <p className="article"><a className="article link" href="https://drive.google.com/file/d/1qwAFskrIMu_j_Uf28C1kbO9evWZoUMYL/view" download>Centripetal Executable Game</a></p>
                 </div>
-                <div className="flex-left">
+                {/* <div className="flex-left">
                     <img src={require("../images/icons/zip.ico")} alt="zip file icon" className="icon"/>
-                    {/* <p className="article"><a className="article link" href={process.env.PUBLIC_URL + "downloads/CentripetalSource.zip"} download>Centripetal Unreal Engine Project Source</a></p> */}
-                </div>
+                    <p className="article"><a className="article link" href={process.env.PUBLIC_URL + "downloads/CentripetalSource.zip"} download>Centripetal Unreal Engine Project Source</a></p>
+                </div> */}
                 <p className="article inline footer">Category: <Link className="link" to="/game-development"><span python-backend="category">Game Development</span></Link></p>
                 <p className="article inline footer">Last Updated: 6/20/2021</p>
             </div>
