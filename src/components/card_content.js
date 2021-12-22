@@ -12,7 +12,7 @@ class CardContent extends Component {
             <div className="card-content">
                 <h1 className="cc-title">{this.props.title}</h1>    
                 <div className="cc-content-container">
-                    <h2 className="cc-content">
+                    <h2 className="cc-content" id={this.props.title}>
                         {this.props.content}
                     </h2>
                 </div>
@@ -27,8 +27,8 @@ class CardContent extends Component {
 
     componentDidMount() {
         //See ftellipsis import
-        var ellipseElement = document.getElementsByClassName("cc-content-container")[0];
-        var ellipsis = new FTE.Ellipsis(ellipseElement.parentElement);
+        var ellipseElement = document.getElementById(this.props.title);
+        var ellipsis = new FTE.Ellipsis(ellipseElement.parentElement, true);
 
         ellipsis.calc();
         ellipsis.set();

@@ -12,7 +12,7 @@ class NWNToolset extends Component {
         this.state={
             menu: false,
         }
-        document.title = "Jeffrey Gaydos Portfolio - NWN Toolset";
+        document.title = "Neverwinter Nights Toolset - Jeffrey Gaydos Portfolio";
         document.body.style.backgroundColor = 'rgb(89, 89, 89)';
     }
     

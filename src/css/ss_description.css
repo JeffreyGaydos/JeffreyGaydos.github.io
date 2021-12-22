@@ -60,6 +60,15 @@ h3.ss-description-text {
     text-overflow: ellipsis;
 }
 
+h3.ss-description-text.content {
+    max-height: inherit;
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-delay: 0.75s;
+    animation-fill-mode: forwards;
+    height: 600px !important;
+}
+
 div.text-blocker {
     background-image: linear-gradient(to right, black, black, black, black, rgba(0, 0, 0, 0));
     height: 130px;

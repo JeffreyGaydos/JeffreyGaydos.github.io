@@ -57,7 +57,7 @@ class CategoryPage extends Component {
         const pageWidth = document.body.clientWidth;
         const cardWidth = cardElements[0].clientWidth;
         var cardsPerWidth = Math.floor(pageWidth / cardWidth);
-        console.log(cardsPerWidth + ', ' + cardElements.length);
+        //console.log(cardsPerWidth + ', ' + cardElements.length);
         for(var k = 0; k < cardElements.length; k += cardsPerWidth) {
             for(var l = k + 1; l < cardsPerWidth + k; l++) {
                 try {

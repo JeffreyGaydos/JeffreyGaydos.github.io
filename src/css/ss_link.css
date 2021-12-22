@@ -1,0 +1,7 @@
+div.ss-link-box {
+    height: 100%;
+    width: calc(100% - 500px);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}

@@ -12,7 +12,7 @@ class TankEnc extends Component {
         this.state={
             menu: false,
         }
-        document.title = "Jeffrey Gaydos Portfolio - NWN Toolset";
+        document.title = "Tank Encyclopedia - Jeffrey Gaydos Portfolio";
         document.body.style.backgroundColor = 'rgb(89, 89, 89)';
     }
     

@@ -2,7 +2,10 @@
 	"names": {
 		"0" : "Centripetal",
 		"1" : "NWNToolset",
-		"2" : "TankEncyclopedia"
+		"2" : "Origamist",
+		"3" : "TankEncyclopedia",
+		"4" : "ThisSite",
+		"5" : "Unum"
 	},
 
 	"0" : {
@@ -22,10 +25,34 @@
 	},
 
 	"2" : {
+		"title" : "Origamist - Unity",
+		"date" : "December, 2019 - December 2020",
+		"content" : "A smaller, more experimental project that allowed me to explore asset creation, animation, shaders, and procedural generation. Inspired from my childhood hobby (of origami), I aimed to create a relaxing, origami world rather than a full game. Currently, this project serves as a playground for me to try out new skills and techniques without diving into a large scale project.",
+		"image" : "/images/project2origamist.PNG",
+		"category" : "Game Development"
+	},
+
+	"3" : {
 		"title" : "Volunteer Web Developer - Tank Encyclopedia",
 		"date" : "May, 2020 - Present",
 		"content" : "Tank Encyclopedia is run by a community of volunteers ranging from amateur historians to professionals. Near the end of 2019, the managers of this community switched hosts for the website and started using Wordpress. After urgings from my brother Brian Gaydos (who had been considerably involved in the community), I decided to aid in creating features for the website as well as helping with general maintenance. Having little to no experience in Wordpress was a learning curve, but using my background in CSS and a few tutorials, I made my first feature for the website in a week. Since May of 2020, I have implemented roughly 5 features and other small modifications for the website. Considerable local testing was done for each feature, and I eventually set up a local development server using XAMP. Recently, I moved all the code from my child theme to a plugin with togglable features to aid in maintenance and stability of the website. This project advanced my knowledge and experience in Web Development principles, networking principles, JavaScript (and jQuery), and CSS.",
 		"image" : "/images/TankEncyclopediaHomepage.png",
+		"category" : "Web Development"
+	},
+
+	"4" : {
+		"title" : "This Site - React.js and GitHub Pages",
+		"date" : "May, 2021 - Present",
+		"content" : "This site was previously implemented using Bootstrap, and after learning of the power of React.js, I wanted to put it to work. Additionally, I found my bootstrap site to have an outdated style. Resolving to make an overall better portfolio site, I decided to create this site very carefully, with plenty of input from others about styling.",
+		"image" : "/images/ThisSite.png",
+		"category" : "Web Development"
+	},
+
+	"5" : {
+		"title" : "Unum - Accessibility Web Developer",
+		"date" : "June, 2021 - August 2021",
+		"content" : "Description about Unum to come...",
+		"image" : "/images/UnumLogoWhite.jpg",
 		"category" : "Web Development"
 	}
 }

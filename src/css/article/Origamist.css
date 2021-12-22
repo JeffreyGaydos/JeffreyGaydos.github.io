@@ -1,0 +1,50 @@
+.real-to-blend {
+    height: 250px;
+    width: 300px;
+}
+
+.arrow {
+    width: 0px;
+    position: relative;
+    left: -4%;
+    top: 80px;
+    z-index: 0;
+}
+
+.arrow-base {
+    background-color: rgb(192, 0, 0);
+    width: 60px;
+    height: 25px;
+}
+
+.arrow-head {
+    position: relative;
+    top: -53.5px;
+    left: 60px;
+    background-color: rgb(192, 0, 0);
+    width: 50px;
+    height: 75px;
+}
+
+.arrow-head.blocker-top {
+    background-color: white;
+    z-index: 1;
+    transform: rotate(50deg);
+    position: relative;
+    top: -100px;
+    left: 80px;
+}
+
+.arrow-head.blocker-bottom {
+    background-color: white;
+    z-index: 1;
+    transform: rotate(-50deg);
+    position: relative;
+    top: -240px;
+    left: 80px;
+}
+
+img {
+    position: relative;
+    z-index: 2;
+}

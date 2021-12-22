@@ -35,12 +35,17 @@ h1.article {
     text-align: center;
 }
 
+.article {
+    vertical-align: middle;
+}
+
 h2.article, h3.article {
     text-align: left;
     margin-top: 30px;
     font-family: 'Avenir';
     color: black;
     line-height: 35px;
+    vertical-align: top;
 }
 
 li.article {
@@ -64,10 +69,11 @@ h2.date {
     margin-bottom: 30px;
 }
 
-img.article {
+img.article, video.article {
     max-width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
+    vertical-align: middle;
 }
 
 div.article-ch-pos {
@@ -127,6 +133,25 @@ div.article-ch-pos {
     width: 48%;
 }
 
+.third-left, .third-right {
+    width: 31%;
+}
+
+.third-mid {
+    width: 31%;
+    margin: 0% 3.5%;
+}
+
+.two-thirds-right {
+    width: 67%;
+    padding-left: 2%;
+}
+
+.two-thirds-left {
+    width: 67%;
+    padding-right: 2%;
+}
+
 img.split-right, img.split-left{
     width: 100%;
     padding: 0px;
@@ -136,4 +161,20 @@ img.split-right, img.split-left{
 ul.split-left, ul.split-right, ol.split-left, ol.split-right {
     width: 44%;
     margin: 0px;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.reduced-margin {
+    margin: 15px 0px !important;
+}
+
+.crop {
+    object-fit: cover;
 }

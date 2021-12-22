@@ -10,7 +10,10 @@ import _404Page from './pages/404page.jsx';
 /*Python Backend Imports Start*/
 import Centripetal from './pages/Centripetal.jsx'
 import NWNToolset from './pages/NWNToolset.jsx'
+import Origamist from './pages/Origamist.jsx'
 import TankEncyclopedia from './pages/TankEncyclopedia.jsx'
+import ThisSite from './pages/ThisSite.jsx'
+import Unum from './pages/Unum.jsx'
 /*Python Backend Imports End*/
 import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom"; //Using hash router to prevent github 404 errors (https://www.bing.com/search?q=react%20router%20404%20on%20refresh%20github%20pages&qs=n&form=QBRE&sp=-1&pq=react%20router%20404%20on%20refresh%20github%20page&sc=2-39&sk=&cvid=CEF0DBE5EB27412380C26C7889BEF402)
 import HTMLPort from './components/html_port';
@@ -36,9 +39,12 @@ ReactDOM.render(
               {/* Python Backend Routes Start */}
  							<Route path="/Centripetal" component={Centripetal} />
 							<Route path="/NWNToolset" component={NWNToolset} />
+							<Route path="/Origamist" component={Origamist} />
 							<Route path="/TankEncyclopedia" component={TankEncyclopedia} />
-							<Route path="/game-development" render={() => <CategoryPage category="Game Development"/>} />
+							<Route path="/ThisSite" component={ThisSite} />
+							<Route path="/Unum" component={Unum} />
 							<Route path="/web-development" render={() => <CategoryPage category="Web Development"/>} />
+							<Route path="/game-development" render={() => <CategoryPage category="Game Development"/>} />
 {/* Python Backend Routes End */}
               <Route component={_404Page}/> {/* Works like the "default" case in an imperitave switch statement */}
             </Switch>

@@ -3,7 +3,7 @@ import '../css/slide_show.css';
 import SSDecsription from './ss_description';
 import SSImage from './ss_image';
 import backend from '../micro-backend/JSON/backend.json';
-import { Link } from 'react-router-dom';
+import SSLink from './ss_link';
 
 //var currentSlideNum;
 var slideActive = false;
@@ -35,9 +35,7 @@ class SlideShow extends Component {
             <div className="slide-show">
                 <SSDecsription title={this.state.title} date={this.state.date} content={this.state.content} link={this.state.name} length={this.state.length} clickEventForwards={this.SSForwards.bind(this)} clickEventBackwards={this.SSBackwards.bind(this)} slide={this.state.currentSlide} slideNum={this.state.currentSlide}/>
                 <SSImage image={this.state.image} link={this.state.name}/>
-                <Link to={"/" + this.state.name}>
-                    <div className="ss-link-box"></div>
-                </Link>
+                <SSLink name={this.state.name} />
             </div>
         );
     }
@@ -69,7 +67,7 @@ class SlideShow extends Component {
 
     SSForwardsStateUpdate() {
         var currentSlideNum = this.state.currentSlide < this.state.length - 1 ? this.state.currentSlide + 1 : 0;
-        var formattedName = backend['names'][this.state.currentSlide];
+        var formattedName = backend['names'][currentSlideNum];
         this.setState((prevState) => ({
             currentSlide: currentSlideNum,
             title: backend[currentSlideNum].title,
@@ -99,7 +97,7 @@ class SlideShow extends Component {
 
     SSBackwardsStateUpdate() {
         var currentSlideNum = this.state.currentSlide > 0 ? this.state.currentSlide - 1 : this.state.length - 1;
-        var formattedName = backend['names'];
+        var formattedName = backend['names'][currentSlideNum];
         this.setState((prevState) => ({
             currentSlide: currentSlideNum,
             title: backend[currentSlideNum].title,
@@ -119,26 +117,30 @@ class SlideShow extends Component {
     }
 
     SlideInterval() {
-        //conditionals for stoping the automatic slideshow
-        if(window.location.pathname !== "/") {
-            clearInterval(this.state.intervalID);
-        } else {
-            if(intervalBool) { //conditionals for skiping the double click
-                intervalBool = false;
+        try {
+            //conditionals for stoping the automatic slideshow
+            if(window.location.pathname !== "/") {
+                clearInterval(this.state.intervalID);
             } else {
-                intervalBool = true;
-                //The following code must be in this false branch here to detect user input
-                if(this.state.currentSlide !== this.state.intervalSlide) {
-                    //pause slideshow for 1 interval
-                    this.SlideIntervalStateUpdateToCurrent.bind(this);
-                    this.SlideIntervalStateUpdateToCurrent();
+                if(intervalBool) { //conditionals for skiping the double click
+                    intervalBool = false;
                 } else {
-                    //continue slideshow as normal
-                    this.SlideIntervalStateUpdate.bind(this);
-                    this.SlideIntervalStateUpdate();
-                    document.getElementsByClassName("ss-arrow")[1].click(); //state change & binding issues occur if the function is called directly
+                    intervalBool = true;
+                    //The following code must be in this false branch here to detect user input
+                    if(this.state.currentSlide !== this.state.intervalSlide) {
+                        //pause slideshow for 1 interval
+                        this.SlideIntervalStateUpdateToCurrent.bind(this);
+                        this.SlideIntervalStateUpdateToCurrent();
+                    } else {
+                        //continue slideshow as normal
+                        this.SlideIntervalStateUpdate.bind(this);
+                        this.SlideIntervalStateUpdate();
+                        document.getElementsByClassName("ss-arrow")[1].click(); //state change & binding issues occur if the function is called directly
+                    }
                 }
             }
+        } catch (e) {
+            //ignore
         }
     }
 
@@ -155,7 +157,9 @@ class SlideShow extends Component {
         }));
     }
 
-    
+    componentWillUnmount() {
+        clearInterval(this.state.intervalID);
+    }
 }
 
 export default SlideShow;

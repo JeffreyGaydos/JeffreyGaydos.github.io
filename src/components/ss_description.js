@@ -24,7 +24,7 @@ class SSDecsription extends Component {
                         </h3>
                         <br />
                         <div className="ellipsis-wrapper">
-                        <h3 className="ss-description-text" id="ss-description-text-content">
+                        <h3 className="ss-description-text content" id={this.props.title}>
                             {/* My high school capstone, this project involved the use of a relatively obscure tool known as the “Neverwinter Nights Toolset” from the 2002 game “Neverwinter Nights”. The project consisted of world building, creative writing, general game design principles, and scripting in a custom C-based language. */}
                             {this.props.content}
                         </h3>
@@ -60,7 +60,7 @@ class SSDecsription extends Component {
 
     componentDidMount() {
         //See ftellipsis import
-        var ellipseElement = document.getElementById("ss-description-text-content");
+        var ellipseElement = document.getElementById(this.props.title);
         var ellipsis = new FTE.Ellipsis(ellipseElement.parentElement);
 
         ellipsis.calc();

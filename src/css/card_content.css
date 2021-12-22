@@ -1,5 +1,5 @@
 div.card-content {
-    height: 201px;
+    height: 200px;
     line-height: 20px;
 }
 
@@ -8,10 +8,11 @@ h2.cc-content {
     font-size: 14pt;
     text-align: justify;
     height: inherit;
+    display: block;
 }
 
 div.cc-content-container {
-    padding: 10px 50px 0px 50px;
+    padding: 0px 50px 0px 50px;
     height: inherit !important;
 }
 
@@ -20,6 +21,11 @@ h1.cc-title {
     font-size: 18pt;
     text-align: center;
     line-height: 30px;
+    height: 40pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 .custom-ellipsis {
@@ -35,7 +41,8 @@ h1.cc-title {
 .cc-custom-ellipsis {
     position: absolute;
     bottom: 70px;
-    display: block !important;
+    /* display: block !important; */
+    display: none;
     margin-left: calc(50% - 22.5px);
 }
 
