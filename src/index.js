@@ -43,8 +43,8 @@ ReactDOM.render(
 							<Route path="/Origamist" component={Origamist} />
 							<Route path="/Centripetal" component={Centripetal} />
 							<Route path="/NWNToolset" component={NWNToolset} />
-							<Route path="/web-development" render={() => <CategoryPage category="Web Development"/>} />
 							<Route path="/game-development" render={() => <CategoryPage category="Game Development"/>} />
+							<Route path="/web-development" render={() => <CategoryPage category="Web Development"/>} />
 {/* Python Backend Routes End */}
               <Route component={_404Page}/> {/* Works like the "default" case in an imperitave switch statement */}
             </Switch>
