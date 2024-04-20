@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import HomePage from './pages/homepage.jsx';
 import Resume from './pages/resume.jsx';
+import RSSFeed from './pages/TERSSPage';
 import About from './pages/about.jsx';
 import WebDesign from './pages/webDevelopment.jsx'
 //import gameDesign from './pages/gameDesign.jsx'
@@ -31,6 +32,7 @@ ReactDOM.render(
             <Switch> {/* Ensures that only 1 page will be loaded at a time*/}
               <Route path="/" exact component={HomePage} />
               <Route path="/resume" component={Resume} />
+              <Route path="/te-rss" component={RSSFeed} />
               <Route path="/about" component={About} />
               <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
