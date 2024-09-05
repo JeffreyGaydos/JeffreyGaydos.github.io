@@ -64,5 +64,7 @@ table:not(.destination) .tile {
 }
 
 .tile.error {
-    border: 1px solid red !important;
+    border: 3px solid red !important;
+    width: 36px;
+    height: 36px;
 }

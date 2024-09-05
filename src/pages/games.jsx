@@ -259,10 +259,11 @@ class Games extends Component {
             <div className="article-wrapper">
             </div>
             <div className="content-wrapper">
+                <h1>Games!</h1>
                 <ul className="game-list">
                     <li className="tile-flip">
                         <p>Tile Flip:</p>
-                        <p>Flip tiles to change the source grid into the destination grid. Each flip will swap the color of all adjacent tiles and the title you clicked. Refresh to get a new random board. The number of flips needed for this puzzle is listed below.</p>
+                        <p>Flip tiles to change the source grid into the destination grid. Each flip will swap the color of all adjacent tiles and the title you clicked. Refresh to get a new random board. The number of flips needed for this puzzle is listed below. If you run out of flips, any tiles that don't match will be highlighted and red, and your moves will be undone. Refresh to get a new puzzle.</p>
                         <label><b>{this.state.flips} Flip(s) total</b></label>
                         <label><b>Remaining Flips: {this.state.flipsLeft}</b></label>
                         <label>Destination Grid:</label>
