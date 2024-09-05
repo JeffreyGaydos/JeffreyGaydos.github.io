@@ -24,7 +24,7 @@ ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
           <main>
-          <WIPNotification />
+          {/* <WIPNotification /> */}
               {/*<nav>
                   <ul>
                       <li><Link to="/">Home</Link></li>
