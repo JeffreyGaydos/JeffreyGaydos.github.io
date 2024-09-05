@@ -1,0 +1,70 @@
+.game-list {
+    text-align: left;
+}
+
+.tile-flip td {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.tile {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+}
+
+table:not(.destination) .tile {
+    cursor: pointer;
+}
+
+.tile-flip table:not(.destination) td:hover, /*center*/
+.tile-flip table:not(.destination) td:hover+td, /*right*/
+.tile-flip table:not(.destination) td:has(+td:hover), /*left*/
+.tile-flip table:not(.destination) tr:has(td:nth-child(1):hover)+tr td:nth-child(1), .tile-flip table:not(.destination) tr:has(td:nth-child(2):hover)+tr td:nth-child(2), .tile-flip table:not(.destination) tr:has(td:nth-child(3):hover)+tr td:nth-child(3), .tile-flip table:not(.destination) tr:has(td:nth-child(4):hover)+tr td:nth-child(4), .tile-flip table:not(.destination) tr:has(td:nth-child(5):hover)+tr td:nth-child(5), .tile-flip table:not(.destination) tr:has(td:nth-child(6):hover)+tr td:nth-child(6), .tile-flip table:not(.destination) tr:has(td:nth-child(7):hover)+tr td:nth-child(7), .tile-flip table:not(.destination) tr:has(td:nth-child(8):hover)+tr td:nth-child(8), .tile-flip table:not(.destination) tr:has(td:nth-child(9):hover)+tr td:nth-child(9), /*bottom center*/
+.tile-flip table:not(.destination) tr:has(td:nth-child(1):hover)+tr td:nth-child(0), .tile-flip table:not(.destination) tr:has(td:nth-child(2):hover)+tr td:nth-child(1), .tile-flip table:not(.destination) tr:has(td:nth-child(3):hover)+tr td:nth-child(2), .tile-flip table:not(.destination) tr:has(td:nth-child(4):hover)+tr td:nth-child(3), .tile-flip table:not(.destination) tr:has(td:nth-child(5):hover)+tr td:nth-child(4), .tile-flip table:not(.destination) tr:has(td:nth-child(6):hover)+tr td:nth-child(5), .tile-flip table:not(.destination) tr:has(td:nth-child(7):hover)+tr td:nth-child(6), .tile-flip table:not(.destination) tr:has(td:nth-child(8):hover)+tr td:nth-child(7), .tile-flip table:not(.destination) tr:has(td:nth-child(9):hover)+tr td:nth-child(8), /*bottom left*/
+.tile-flip table:not(.destination) tr:has(td:nth-child(1):hover)+tr td:nth-child(2), .tile-flip table:not(.destination) tr:has(td:nth-child(2):hover)+tr td:nth-child(3), .tile-flip table:not(.destination) tr:has(td:nth-child(3):hover)+tr td:nth-child(4), .tile-flip table:not(.destination) tr:has(td:nth-child(4):hover)+tr td:nth-child(5), .tile-flip table:not(.destination) tr:has(td:nth-child(5):hover)+tr td:nth-child(6), .tile-flip table:not(.destination) tr:has(td:nth-child(6):hover)+tr td:nth-child(7), .tile-flip table:not(.destination) tr:has(td:nth-child(7):hover)+tr td:nth-child(8), .tile-flip table:not(.destination) tr:has(td:nth-child(8):hover)+tr td:nth-child(9), .tile-flip table:not(.destination) tr:has(td:nth-child(9):hover)+tr td:nth-child(10), /*bottom right*/
+.tile-flip table:not(.destination) tr:has(+tr td:nth-child(1):hover) td:nth-child(1), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(2):hover) td:nth-child(2), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(3):hover) td:nth-child(3), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(4):hover) td:nth-child(4), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(5):hover) td:nth-child(5), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(6):hover) td:nth-child(6), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(7):hover) td:nth-child(7), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(8):hover) td:nth-child(8), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(9):hover) td:nth-child(9), /*top center*/
+.tile-flip table:not(.destination) tr:has(+tr td:nth-child(1):hover) td:nth-child(0), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(2):hover) td:nth-child(1), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(3):hover) td:nth-child(2), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(4):hover) td:nth-child(3), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(5):hover) td:nth-child(4), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(6):hover) td:nth-child(5), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(7):hover) td:nth-child(6), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(8):hover) td:nth-child(7), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(9):hover) td:nth-child(8), /*top left*/
+.tile-flip table:not(.destination) tr:has(+tr td:nth-child(1):hover) td:nth-child(2), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(2):hover) td:nth-child(3), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(3):hover) td:nth-child(4), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(4):hover) td:nth-child(5), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(5):hover) td:nth-child(6), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(6):hover) td:nth-child(7), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(7):hover) td:nth-child(8), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(8):hover) td:nth-child(9), .tile-flip table:not(.destination) tr:has(+tr td:nth-child(9):hover) td:nth-child(10) /*top right*/
+{
+    scale: 1.1;
+    border-color: gray;
+}
+
+.tile-flip .tile-black {
+    background-color: black;
+}
+
+.tile-flip .tile-white {
+    background-color: white;
+}
+
+.success-true .tile {
+    border: 1px solid greenyellow;
+}
+
+.tile-flip table {
+    margin: auto;
+}
+
+.tile-flip button {
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+}
+
+.tile-flip label {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.tile.error {
+    border: 3px solid red !important;
+    width: 36px;
+    height: 36px;
+}

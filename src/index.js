@@ -18,12 +18,13 @@ import NWNToolset from './pages/NWNToolset.jsx'
 import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom"; //Using hash router to prevent github 404 errors (https://www.bing.com/search?q=react%20router%20404%20on%20refresh%20github%20pages&qs=n&form=QBRE&sp=-1&pq=react%20router%20404%20on%20refresh%20github%20page&sc=2-39&sk=&cvid=CEF0DBE5EB27412380C26C7889BEF402)
 import HTMLPort from './components/html_port';
 import WIPNotification from './components/wip_notification';
+import Games from './pages/games.jsx';
 
 ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
           <main>
-          <WIPNotification />
+          {/* <WIPNotification /> */}
               {/*<nav>
                   <ul>
                       <li><Link to="/">Home</Link></li>
@@ -35,6 +36,7 @@ ReactDOM.render(
               <Route path="/" exact component={HomePage} />
               <Route path="/resume" component={Resume} />
               <Route path="/about" component={About} />
+              <Route path="/games" exact component={Games} /> 
               <Route path="/react/legacy/:path" exact component={HTMLPort} />
               {/* Python Backend Routes Start */}
  							<Route path="/ThisSite" component={ThisSite} />

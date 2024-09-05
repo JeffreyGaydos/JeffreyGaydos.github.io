@@ -23,6 +23,8 @@ class CornerMenu extends Component {
                     <Link to="/game-development"><h2 className="cm-text">Game Development</h2></Link>
                     <div className="cm-divider"></div>
                     <Link to="/react/legacy/index.html"><h2 className="cm-text">Legacy Website</h2></Link>
+                    <div className="cm-divider"></div>
+                    <Link to="/games"><h2 className="cm-text">Games!</h2></Link>
                 </div>
                 <div className="cm-bottom">
                 </div>
