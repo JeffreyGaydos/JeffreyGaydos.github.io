@@ -12,6 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Artifacts
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v2
       - name: Deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
